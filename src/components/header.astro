@@ -5,6 +5,8 @@ import layoutData from "../content/layout/index.yaml";
 import clsx from "clsx";
 import { containerStyles } from "../styles/container";
 import { Button } from "./button";
+
+const currentUrl = Astro.url.pathname;
 ---
 
 <header class={clsx(containerStyles, "py-6")}>
@@ -16,7 +18,13 @@ import { Button } from "./button";
       <ul class="flex gap-4">
         {(layoutData as Layout).headerLinks.map((link) => (
           <li>
-            <a href={link.url} class="">
+            <a 
+              href={link.url} 
+              class={clsx(
+                "hover:text-primary-500 transition-colors duration-200",
+                currentUrl === link.url && "text-primary-700"
+              )}
+            >
               {link.text}
             </a>
           </li>

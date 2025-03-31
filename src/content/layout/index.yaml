@@ -1,5 +1,11 @@
 headerLinks:
   - text: Sobre Nosotros
-    url: '#about'
+    url: /nosotros
+  - text: Actividades
+    url: /actividades
+  - text: Cooperadores
+    url: /cooperadores
+  - text: Recursos
+    url: /recursos
 footerLinks: []
 socialMediaButtons: []
