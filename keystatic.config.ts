@@ -1,5 +1,5 @@
 import { config } from "@keystatic/core";
-import { layout } from "./src/cms/singleton/layout";
+import { home, layout } from "~/cms/singleton";
 
 export default config({
   storage: {
@@ -7,5 +7,6 @@ export default config({
   },
   singletons: {
     layout,
+    home,
   },
 });

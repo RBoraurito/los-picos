@@ -1,7 +1,10 @@
 ---
+import Hero from '~/components/sections/hero.astro';
 import Layout from '../layouts/Layout.astro';
+
+import HeroContent from '~/content/home/index.yaml';
 ---
 
 <Layout>
-	{null}
+	<Hero image={HeroContent.hero.image} title={HeroContent.hero.title} badge={HeroContent.hero.badge} subtitle={HeroContent.hero.subtitle} cta={HeroContent.hero.cta} />
 </Layout>

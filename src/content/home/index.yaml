@@ -1,0 +1,12 @@
+hero:
+  title: Club de jovenes Los Picos
+  badge: OPUS DEI
+  subtitle: >-
+    Mas que un club somos parte del pueblo de Dios, un pueblo nutrido por
+    jovenes y adultos deseosos de hacer el bien para la gloria de Dios
+  image: /home/hero/image.jpg
+  cta:
+    text: Unete a Los Picos
+    url: '#contacto'
+    variant: primary
+    external: false
