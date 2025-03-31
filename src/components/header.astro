@@ -1,0 +1,29 @@
+---
+import type { Layout } from "../cms/singleton/layout";
+import layoutData from "../content/layout/index.yaml";
+import clsx from "clsx";
+import { containerStyles } from "../styles/container";
+import { Button } from "./button";
+---
+
+<header class={clsx(containerStyles, "py-6")}>
+  <div class="flex justify-between items-center">
+    <a href="/" class="text-lg font-medium uppercase">
+      Los picos
+    </a>
+    <nav class="mx-4">
+      <ul class="flex gap-4">
+        {(layoutData as Layout).headerLinks.map((link) => (
+          <li>
+            <a href={link.url} class="">
+              {link.text}
+            </a>
+          </li>
+        ))}
+      </ul>
+    </nav>
+    <Button as="a" href="/contacto">
+      Contacto
+    </Button>
+  </div>
+</header>
