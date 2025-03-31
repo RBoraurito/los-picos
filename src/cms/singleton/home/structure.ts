@@ -1,5 +1,6 @@
 import { singleton, fields } from "@keystatic/core";
 import { cta } from "~/cms/blocks/cta";
+import { imageWBadge } from "~/cms/blocks/image-w-badge";
 
 export const home = singleton({
   label: "Home",
@@ -28,6 +29,26 @@ export const home = singleton({
       },
       {
         label: "Hero section",
+      }
+    ),
+    about: fields.object(
+      {
+        text: fields.markdoc.inline({
+          label: "Text",
+        }),
+        images: fields.array(imageWBadge, {
+          label: "Images",
+          itemLabel: (item) => item.fields.badge.value,
+          validation: {
+            length: {
+              min: 3,
+              max: 3,
+            },
+          },
+        }),
+      },
+      {
+        label: "About section",
       }
     ),
   },

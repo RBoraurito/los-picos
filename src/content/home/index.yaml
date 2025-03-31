@@ -10,3 +10,16 @@ hero:
     url: '#contacto'
     variant: primary
     external: false
+about:
+  text: >
+    Club Los Picos es un centro **juvenil** del **Opus Dei en República
+    Dominicana** que ofrece formación **cristiana, académica y cultural**. Busca
+    formar *líderes* con valores, fortalecer a las familias y promover el
+    servicio a la sociedad a través de actividades **integrales**.
+  images:
+    - image: /about/images/0/image.jpeg
+      badge: Naturaleza
+    - image: /about/images/1/image.jpg
+      badge: Jovenes
+    - image: /about/images/2/image.jpg
+      badge: Fe

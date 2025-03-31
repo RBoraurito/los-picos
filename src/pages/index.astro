@@ -1,10 +1,12 @@
 ---
 import Hero from '~/components/sections/hero.astro';
+import ContentWImages from '~/components/sections/content-w-images.astro';
 import Layout from '../layouts/Layout.astro';
-
+// @ts-expect-error yaml load
 import HeroContent from '~/content/home/index.yaml';
 ---
 
 <Layout>
 	<Hero image={HeroContent.hero.image} title={HeroContent.hero.title} badge={HeroContent.hero.badge} subtitle={HeroContent.hero.subtitle} cta={HeroContent.hero.cta} />
+	<ContentWImages text={HeroContent.about.text} images={HeroContent.about.images} />
 </Layout>
