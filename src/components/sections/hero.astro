@@ -20,7 +20,7 @@ const imageUrl = await resolveImage(image);
 
 ---
 
-<section style={`background-image: url(${baseUrl() + imageUrl});`} class={clsx("rounded-xl w-full flex items-center justify-center min-h-[400px] lg:min-h-[700px] bg-blend-overlay bg-secondary-800", containerStyles)}>
+<section style={`background-image: url(${baseUrl() + imageUrl});`} class={clsx("rounded-xl w-full flex items-center justify-center min-h-[400px] lg:min-h-[700px] bg-blend-overlay bg-secondary-800 bg-no-repeat bg-cover", containerStyles)}>
   <div class="text-center max-w-xl">
     { badge && (
       <p class="text-sm uppercase text-primary-400 font-bold bg-primary-400/5 border border-primary-400 rounded-full px-4 py-1 w-fit text-center mx-auto mb-4">{badge}</p>

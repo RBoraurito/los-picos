@@ -30,3 +30,34 @@ about:
       badge: Jovenes
     - image: /about/images/2/image.jpg
       badge: Fe
+featuredInfo:
+  supportText: ¿Qué es?
+  title: Club Los Picos
+  subtitle: >-
+    Llegar a la cima más alta de nuestra vida es una aventura que nos lleva
+    hacia la excelencia.
+  content: >
+    El Club Los Picos es un lugar donde se desarrollan actividades, que ayudan
+    al socio a crecer de manera integral en los diferentes aspectos de su vida.
+    Promueve el fortalecimiento de valores y de diferentes aspectos que invitan
+    a potenciar las virtudes para que quienes frecuentan el club sean, en el
+    presente y en el futuro, líderes con vocación de servicio, desarrollando
+    todo su potencial para ser un verdadero apoyo en la sociedad, donde quiera
+    que se encuentren. El Club Los Picos cuenta con unos objetivos formativos
+    precisos, con los que busca prestar a los padres y a los colegios, una
+    colaboración para que lleven a cabo su misión de educar líderes y personas
+    de bien, contribuyendo así a mejorar nuestra sociedad.
+
+
+    Es una Fundación Sin Fines de Lucro que, dentro de un marco formativo y en
+    un ambiente atractivo, busca brindar un apoyo en la educación en valores de
+    los jóvenes y en la familia. Es una institución que busca, a través de sus
+    actividades, contribuir a la mejora de la sociedad. Aunque trabajamos como
+    institución desde octubre de 2003, somos una Organización Sin Fines de Lucro
+    reconocida desde el 24 de abril del año 2008 con la resolución Nro. 0035 en
+    virtud del art. 4, párrafo II, de la Ley No. 122-05.
+  images:
+    - /home/featuredInfo/images/0.jpg
+    - /home/featuredInfo/images/1.jpg
+    - /home/featuredInfo/images/2.jpg
+    - /home/featuredInfo/images/3.jpeg

@@ -3,10 +3,12 @@ import Hero from '~/components/sections/hero.astro';
 import ContentWImages from '~/components/sections/content-w-images.astro';
 import Layout from '../layouts/Layout.astro';
 // @ts-expect-error yaml load
-import HeroContent from '~/content/home/index.yaml';
+import HomeContent from '~/content/home/index.yaml';
+import ContentWGridImages from '~/components/sections/content-w-grid-images.astro';
 ---
 
 <Layout>
-	<Hero image={HeroContent.hero.image} title={HeroContent.hero.title} badge={HeroContent.hero.badge} subtitle={HeroContent.hero.subtitle} cta={HeroContent.hero.cta} />
-	<ContentWImages text={HeroContent.about.text} images={HeroContent.about.images} />
+  <Hero image={HomeContent.hero.image} title={HomeContent.hero.title} badge={HomeContent.hero.badge} subtitle={HomeContent.hero.subtitle} cta={HomeContent.hero.cta} />
+  <ContentWImages text={HomeContent.about.text} images={HomeContent.about.images} />
+  <ContentWGridImages supportText={HomeContent.featuredInfo.supportText} title={HomeContent.featuredInfo.title} subtitle={HomeContent.featuredInfo.subtitle} content={HomeContent.featuredInfo.content} images={HomeContent.featuredInfo.images} />
 </Layout>

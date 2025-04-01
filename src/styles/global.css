@@ -1,11 +1,5 @@
 @import "tailwindcss";
 
-@font-face {
-  font-family: "Roboto";
-  src: url("https://fonts.googleapis.com/css2?family=Roboto+Serif:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap");
-  font-style: normal;
-}
-
 @theme {
   --color-primary-50: oklch(0.95 0.05 27.34);
   --color-primary-100: oklch(0.9 0.1 27.34);
@@ -55,5 +49,5 @@
   --color-dark-900: oklch(0.34 0 0);
   --color-dark-950: oklch(0.37 0 0);
 
-  --default-font-family: "Roboto", sans-serif;
+  --default-font-family: "Noto Sans", sans-serif;
 }

@@ -1,0 +1,48 @@
+---
+import { marked } from 'marked';
+import clsx from 'clsx';
+import Image from '../image.astro';
+import { inlineMarkup } from '~/styles/inline-markup';
+
+interface Props {
+  supportText?: string;
+  title: string;
+  subtitle: string;
+  content: string;
+  images: string[];
+  className?: string;
+}
+
+const {supportText, title, subtitle, content, images, className} = Astro.props;
+---
+<div class={clsx("overflow-hidden bg-white py-24 px-2 sm:py-28", className)}>
+  <div class="mx-auto max-w-2xl px-6 lg:max-w-7xl lg:px-8">
+    <div class="max-w-4xl">
+      {supportText && (
+        <p class="text-base/7 font-semibold text-primary-600">{supportText}</p>
+      )}
+      <h2 class="text-pretty text-4xl font-semibold tracking-tight text-dark-600 sm:text-5xl">
+        {title}
+      </h2>
+      <p class="mt-4 text-balance lg:text-xl/8 text-neutral-900">
+        {subtitle}
+      </p>
+    </div>
+    <section class="mt-10 lg:mt-20 grid grid-cols-1 lg:grid-cols-2 lg:gap-x-8 lg:gap-y-16">
+      <div class={clsx("lg:pr-8", inlineMarkup)} set:html={marked.parse(content)} />
+      <div class="pt-4 lg:row-span-2 lg:-mr-16 xl:mr-auto">
+        <div class="-mx-8 grid sm:grid-cols-2 gap-4 sm:-mx-16 lg:mx-0 lg:grid-cols-2 lg:gap-4 xl:gap-8">
+          {images.map(image => (
+            <div class="aspect-square overflow-hidden rounded-xl shadow-xl outline-1 -outline-offset-1 outline-black/10 lg:nth-[even]:-mt-12">
+              <Image
+                src={image}
+                class="block size-full object-cover"
+                alt=""
+              />
+            </div>
+          ))}
+        </div>
+      </div>
+    </section>
+  </div>
+</div>

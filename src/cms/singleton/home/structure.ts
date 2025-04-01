@@ -51,5 +51,43 @@ export const home = singleton({
         label: "About section",
       }
     ),
+    featuredInfo: fields.object(
+      {
+        supportText: fields.text({
+          label: "Support text",
+        }),
+        title: fields.text({
+          label: "Title",
+          validation: { isRequired: true },
+        }),
+        subtitle: fields.text({
+          label: "Subtitle",
+          validation: { isRequired: true },
+        }),
+        content: fields.markdoc.inline({
+          label: "Content",
+        }),
+        images: fields.array(
+          fields.image({
+            label: "Image",
+            directory: "src/assets/home",
+            publicPath: "/home",
+            validation: { isRequired: true },
+          }),
+          {
+            label: "Images",
+            validation: {
+              length: {
+                min: 2,
+                max: 4,
+              },
+            },
+          }
+        ),
+      },
+      {
+        label: "Featured info",
+      }
+    ),
   },
 });
