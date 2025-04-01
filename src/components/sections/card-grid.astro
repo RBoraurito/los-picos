@@ -1,0 +1,45 @@
+---
+import type { ICard } from '~/cms/blocks/card';
+import Image from '../image.astro';
+import { marked } from 'marked';
+
+interface Props {
+  supportText: string;
+  title: string;
+  subtitle: string;
+  content: string;
+  cards: ICard[];
+}
+
+const { supportText, title, subtitle, content, cards } = Astro.props;
+---
+
+<div class="bg-white py-24 sm:py-32">
+  <div class="mx-auto max-w-2xl px-6 lg:max-w-7xl lg:px-8">
+    <p class="text-base/7 font-semibold text-primary-600">{supportText}</p>
+    <h2 class="mt-2 text-pretty text-4xl font-semibold tracking-tight text-gray-950 sm:text-5xl mb-2">
+      {title}
+    </h2>
+    <div set:html={marked.parse(content)}></div>
+    <div class="mt-10 grid grid-cols-1 gap-4 sm:mt-16 lg:grid-cols-3">
+      {cards.map(card => (
+        <div class="relative">
+          <div class="absolute inset-px rounded-lg bg-white" />
+          <div class="relative flex h-full flex-col overflow-hidden rounded-[calc(theme(borderRadius.lg)+1px)]">
+            <Image
+              src={card.image}
+              alt={card.title}
+              class="h-80 object-cover w-full"
+            />
+            <div class="p-10 pt-4">
+              <h3 class="text-sm/4 font-semibold text-primary-600">{card.supportText}</h3>
+              <p class="mt-2 text-lg font-medium tracking-tight text-gray-950">{card.title}</p>
+              <div class="mt-2 max-w-lg text-sm/6 text-gray-600" set:html={card.content}></div>
+            </div>
+          </div>
+          <div class="pointer-events-none absolute inset-px rounded-lg shadow ring-1 ring-black/5" />
+        </div>
+      ))}
+    </div>
+  </div>
+</div>
