@@ -89,6 +89,34 @@ export const home = singleton({
         label: "Featured info",
       }
     ),
+    columns: fields.object({
+      title: fields.text({
+        label: "Title",
+      }),
+      content: fields.markdoc.inline({
+        label: "Content",
+      }),
+      columns: fields.array(
+        fields.object({
+          title: fields.text({
+            label: "Title",
+            validation: { isRequired: true },
+          }),
+          content: fields.markdoc.inline({
+            label: "Content",
+          }),
+        }),
+        {
+          label: "Columns",
+          itemLabel: (item) => item.fields.title.value,
+          validation: {
+            length: {
+              min: 3,
+            },
+          },
+        }
+      ),
+    }),
     highlightedContent: fields.object(
       {
         title: fields.text({

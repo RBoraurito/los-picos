@@ -15,7 +15,7 @@ interface Props {
 
 const {supportText, title, subtitle, content, images, className} = Astro.props;
 ---
-<div class={clsx("overflow-hidden py-24 px-2 sm:py-28", className)}>
+<div class={clsx("overflow-hidden", className)}>
   <div class="mx-auto max-w-2xl px-6 lg:max-w-7xl lg:px-8">
     <div class="max-w-4xl">
       {supportText && (

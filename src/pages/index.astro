@@ -4,6 +4,7 @@ import ContentWImages from '~/components/sections/content-w-images.astro';
 import Layout from '../layouts/Layout.astro';
 import ContentWGridImages from '~/components/sections/content-w-grid-images.astro';
 import FeaturedContent from '~/components/sections/featured-content.astro';
+import ContentWColumns from '~/components/sections/content-w-columns.astro';
 
 // @ts-expect-error yaml load
 import HomeContent from '~/content/home/index.yaml';
@@ -11,7 +12,9 @@ import HomeContent from '~/content/home/index.yaml';
 
 <Layout>
   <Hero image={HomeContent.hero.image} title={HomeContent.hero.title} badge={HomeContent.hero.badge} subtitle={HomeContent.hero.subtitle} cta={HomeContent.hero.cta} />
-  <ContentWGridImages supportText={HomeContent.featuredInfo.supportText} title={HomeContent.featuredInfo.title} subtitle={HomeContent.featuredInfo.subtitle} content={HomeContent.featuredInfo.content} images={HomeContent.featuredInfo.images} />
+  <ContentWGridImages supportText={HomeContent.featuredInfo.supportText} title={HomeContent.featuredInfo.title} subtitle={HomeContent.featuredInfo.subtitle} content={HomeContent.featuredInfo.content} images={HomeContent.featuredInfo.images} className="py-24 px-2 sm:py-28" />
+	<ContentWColumns {...HomeContent.columns} className="pb-24 px-2 sm:pb-28" />
 	<FeaturedContent {...HomeContent.highlightedContent} />
+	<!-- <BentoGrid /> -->
   <ContentWImages text={HomeContent.about.text} images={HomeContent.about.images} />
 </Layout>

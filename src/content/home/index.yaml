@@ -61,6 +61,34 @@ featuredInfo:
     - /home/featuredInfo/images/1.jpg
     - /home/featuredInfo/images/2.jpg
     - /home/featuredInfo/images/3.jpeg
+columns:
+  title: Conoce nuestros valores
+  content: ''
+  columns:
+    - title: Misión
+      content: >
+        Ser un proyecto de complementación educativa que, a través de sus
+        actividades formativas y recreativas, ayude a los socios que lo integran
+        a crecer de manera integral en los diferentes aspectos de su vida sean,
+        en el presente y en el futuro líderes con vocación de servicio.
+    - title: Visión
+      content: >
+        Ser reconocidos como un baluarte en la formación y fortalecimiento de
+        valores humanos y cristianos siendo un apoyo para los padres en la
+        educación de sus hijos.
+    - title: Objetivos
+      content: >
+        - Promover el fortalecimiento de los valores en la juventud y en la
+        familia.
+
+        - Proporcionar una formación integral en las personas que participen de
+        nuestras actividades.
+
+        - Ser apoyo en la educación en valores que los jóvenes reciben en la
+        familia y en el colegio.
+
+        - Formar líderes con vocación de servicio que sean un verdadero aporte a
+        la sociedad dominicana.
 highlightedContent:
   title: ¡Los sueños se vuelven realidad! Celebrando nuestros primeros 20 años.
   content: >

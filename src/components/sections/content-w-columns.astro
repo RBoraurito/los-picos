@@ -1,0 +1,41 @@
+---
+import clsx from 'clsx';
+import { marked } from 'marked';
+import { containerStyles } from '~/styles/container';
+
+
+interface Props {
+  title?: string;
+  subtitle?: string;
+  columns: {
+    title: string;
+    content: string;
+  }[];
+  className?: string;
+}
+
+const { title, subtitle, columns, className } = Astro.props;
+---
+
+<div class={clsx(containerStyles, className)}>
+  {(title || subtitle) && (
+    <div class="mx-auto max-w-2xl lg:mx-0">
+      {title && (
+        <h2 class="text-pretty text-4xl font-semibold tracking-tight text-gray-900 sm:text-5xl">{title}</h2>
+      )}
+      {subtitle && (
+        <p class="mt-6 text-lg/8 text-gray-600">
+          {subtitle}
+        </p>
+      )}
+    </div>
+  )}
+  <dl class="mx-auto mt-16 grid max-w-2xl grid-cols-1 gap-x-8 gap-y-16 text-base/7 sm:grid-cols-2 lg:mx-0 lg:max-w-none lg:grid-cols-3">
+    {columns.map((column) => (
+      <div >
+        <dt class="font-semibold text-gray-900">{column.title}</dt>
+        <dd class="mt-1 text-gray-600 [&_ul]:list-disc [&_ul]:list-inside" set:html={marked.parse(column.content)}></dd>
+      </div>
+    ))}
+  </dl>
+</div>
