@@ -61,3 +61,30 @@ featuredInfo:
     - /home/featuredInfo/images/1.jpg
     - /home/featuredInfo/images/2.jpg
     - /home/featuredInfo/images/3.jpeg
+highlightedContent:
+  title: ¡Los sueños se vuelven realidad! Celebrando nuestros primeros 20 años.
+  content: >
+    **Estimados amigos:** Este aniversario es una buena ocasión para detenerse y
+    tornar nuestra mirada a los comienzos. Un grupo de niños y padres
+    ilusionados por hacer algo para mejorar la juventud en nuestro país y hacer
+    líderes con espíritu de servicio. Inspirados por el mensaje de San Josemaría
+    de vivir santamente la vida ordinaria, un grupo de 8 niños y un grupo de
+    padres con la ilusión de que sus hijos fueran la mejor versión de ellos
+    mismos, comenzaron un camino que hoy se toca con firmeza.
+
+
+    Son más de 280 jóvenes y más de 100 familias que a lo largo de estos 20
+    años, han sido y forman parte del Club Los Picos. Un Club, que hoy cuenta
+    con una sede propia, con proyectos propios que se van consolidando y de los
+    que se van viendo los frutos con el paso del tiempo.
+
+
+    Felicidades a todos los que han hecho posible que celebremos estos 20 años.
+    Será un año inolvidable, y como siempre… ***Lleno de aventuras que nos
+    lleven a la excelencia***.
+  image: /home/highlightedContent/image.jpg
+  cta:
+    text: Conocenos
+    url: '#about'
+    variant: primary
+    external: true

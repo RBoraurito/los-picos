@@ -89,5 +89,26 @@ export const home = singleton({
         label: "Featured info",
       }
     ),
+    highlightedContent: fields.object(
+      {
+        title: fields.text({
+          label: "Title",
+          validation: { isRequired: true },
+        }),
+        content: fields.markdoc.inline({
+          label: "Content",
+        }),
+        image: fields.image({
+          label: "Image",
+          directory: "src/assets/home",
+          publicPath: "/home",
+          validation: { isRequired: true },
+        }),
+        cta,
+      },
+      {
+        label: "Highlighted content",
+      }
+    ),
   },
 });

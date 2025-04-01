@@ -1,3 +1,4 @@
+logo: /layout/logo.svg
 headerLinks:
   - text: Sobre Nosotros
     url: /nosotros

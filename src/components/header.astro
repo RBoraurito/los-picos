@@ -1,18 +1,25 @@
 ---
-import type { Layout } from "../cms/singleton/layout";
-// @ts-expect-error yaml load
-import layoutData from "../content/layout/index.yaml";
 import clsx from "clsx";
+import type { Layout } from "../cms/singleton/layout";
 import { containerStyles } from "../styles/container";
 import { Button } from "./button";
+import Image from "./image.astro";
+// @ts-expect-error yaml load
+import layoutData from "../content/layout/index.yaml";
 
 const currentUrl = Astro.url.pathname;
+
+console.log(layoutData.logo)
 ---
 
 <header class={clsx(containerStyles, "py-6")}>
   <div class="flex justify-between items-center">
     <a href="/" class="text-lg font-medium uppercase">
-      Los picos
+      {layoutData.logo ? (
+        <Image src={layoutData.logo} alt="Logo club los picos" class="w-12 h-12" />
+      ) : (
+        "Club Los Picos"
+      )}
     </a>
     <nav class="mx-4">
       <ul class="flex gap-4">
