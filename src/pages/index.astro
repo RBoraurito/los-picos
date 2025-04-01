@@ -5,6 +5,7 @@ import ContentWGridImages from '~/components/sections/content-w-grid-images.astr
 import FeaturedContent from '~/components/sections/featured-content.astro';
 import ContentWColumns from '~/components/sections/content-w-columns.astro';
 import CardGrid from '~/components/sections/card-grid.astro';
+import Faq from '~/components/sections/faq.astro';
 
 // @ts-expect-error yaml load
 import HomeContent from '~/content/home/index.yaml';
@@ -16,4 +17,5 @@ import HomeContent from '~/content/home/index.yaml';
 	<ContentWColumns {...HomeContent.columns} className="pb-24 px-2 sm:pb-28" />
 	<FeaturedContent {...HomeContent.highlightedContent} />
 	<CardGrid {...HomeContent.activities} />
+	<Faq {...HomeContent.faq} className="pb-24" />
 </Layout>

@@ -144,5 +144,37 @@ export const home = singleton({
         label: "Activities",
       }
     ),
+    faq: fields.object(
+      {
+        title: fields.text({
+          label: "Title",
+          validation: { isRequired: true },
+        }),
+        faqs: fields.array(
+          fields.object({
+            question: fields.text({
+              label: "Question",
+              validation: { isRequired: true },
+            }),
+            answer: fields.text({
+              label: "Answer",
+              validation: { isRequired: true },
+            }),
+          }),
+          {
+            label: "FAQs",
+            itemLabel: (item) => item.fields.question.value,
+            validation: {
+              length: {
+                min: 3,
+              },
+            },
+          }
+        ),
+      },
+      {
+        label: "FAQs",
+      }
+    ),
   },
 });

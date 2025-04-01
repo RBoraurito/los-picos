@@ -190,3 +190,20 @@ activities:
         inquietudes y trabajan juntos en el crecimiento y desarrollo de cada
         socio.
       image: /activities/cards/10/image.jpg
+faq:
+  title: ¿Cómo funciona el club Los Picos?
+  faqs:
+    - question: ¿A quien esta dirigido?
+      answer: El Club Está dirigido a muchachos entre 10 y 18 años.
+    - question: ¿Cuando esta activo?
+      answer: Funciona durante el periodo escolar, es decir, de septiembre a junio.
+    - question: ¿Que horario tiene?
+      answer: >-
+        Las actividades son los martes y jueves, de 4 pm a 7 pm. Para los
+        paseos, excursiones y actividades en días distintos, avisamos con
+        anticipación.
+    - question: ¿Cómo formalizo la inscripción al Club Los Picos?
+      answer: >-
+        Una breve entrevista previa del chico y su representante para que uno de
+        los directores del Club les explique bien el proyecto. Llenar una ficha
+        de inscripción y hacer el aporte.
