@@ -1,9 +1,7 @@
 hero:
   title: Club de jovenes Los Picos
   badge: OPUS DEI
-  subtitle: >-
-    Mas que un club somos parte del pueblo de Dios, un pueblo nutrido por
-    jovenes y adultos deseosos de hacer el bien para la gloria de Dios
+  subtitle: Un Club para crecer en valores, mientras disfrutas el proceso.
   image: /home/hero/image.jpg
   cta:
     text: Unete a Los Picos
@@ -12,10 +10,19 @@ hero:
     external: false
 about:
   text: >
-    Club Los Picos es un centro **juvenil** del **Opus Dei en República
-    Dominicana** que ofrece formación **cristiana, académica y cultural**. Busca
-    formar *líderes* con valores, fortalecer a las familias y promover el
-    servicio a la sociedad a través de actividades **integrales**.
+    El Club Los Picos es un lugar donde se desarrollan **actividades**, que
+    ayudan al socio a crecer de manera integral en los diferentes aspectos de su
+    vida. Promueve el **fortalecimiento de valores** y de diferentes aspectos
+    que invitan a **potenciar las virtudes** para que quienes frecuentan el club
+    sean, en el presente y en el futuro, **líderes con vocación de servicio**,
+    desarrollando todo su potencial para ser un verdadero **apoyo en la
+    sociedad**, donde quiera que se encuentren.
+
+
+    El Club Los Picos cuenta con unos **objetivos formativos precisos**, con los
+    que busca prestar a los padres y a los colegios, una colaboración para que
+    lleven a cabo su **misión de educar líderes** y **personas de bien**,
+    contribuyendo así a mejorar nuestra sociedad.
   images:
     - image: /about/images/0/image.jpeg
       badge: Naturaleza
