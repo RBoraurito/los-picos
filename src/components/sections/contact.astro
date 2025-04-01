@@ -1,0 +1,73 @@
+---
+import { BuildingOffice2Icon, EnvelopeIcon, PhoneIcon } from '@heroicons/react/24/outline'
+import clsx from 'clsx';
+import WhatsappIcon from '~/assets/social/whatsapp.svg';
+
+interface Props {
+  className?: string;
+}
+
+const { className } = Astro.props;
+---
+
+<div class={clsx("relative isolate bg-white")}>
+  <div class="mx-auto grid max-w-7xl grid-cols-1 lg:grid-cols-2">
+    <div class="relative px-6 pb-20 pt-24 sm:pt-32 lg:static lg:px-8 lg:py-48">
+      <div class="mx-auto max-w-xl lg:mx-0 lg:max-w-lg">
+        <h2 class="text-pretty text-4xl font-semibold tracking-tight text-primary-700 sm:text-5xl">
+          Visitanos
+        </h2>
+        <p class="mt-6 text-lg/8 text-gray-600">
+          Para cualquier información puedes escribirnos, por correo mensaje o Whatsapp, y recuerda, siempre puedes visitarnos para conocer el club y la obra.
+        </p>
+        <dl class="mt-10 space-y-4 text-base/7 text-gray-600">
+          <div class="flex gap-x-4">
+            <dt class="flex-none">
+              <span class="sr-only">Dirección</span>
+              <BuildingOffice2Icon aria-hidden="true" className="h-7 w-6 text-primary-700" />
+            </dt>
+            <dd>
+              C. Ángel Severo Cabra
+              <br />
+              Santo Domingo
+            </dd>
+          </div>
+          <div class="flex gap-x-4">
+            <dt class="flex-none">
+              <span class="sr-only">Teléfono</span>
+              <PhoneIcon aria-hidden="true" className="h-7 w-6 text-primary-700" />
+            </dt>
+            <dd>
+              <a href="tel:+18097294072" class="hover:text-primary-900">
+                +1 (809) 729-4072
+              </a>
+            </dd>
+          </div>
+          <div class="flex gap-x-4">
+            <dt class="flex-none">
+              <span class="sr-only">Email</span>
+              <EnvelopeIcon aria-hidden="true" className="h-7 w-6 text-primary-700" />
+            </dt>
+            <dd>
+              <a href="mailto: clublospicos@gmail.com" class="hover:text-primary-900">
+                clublospicos@gmail.com
+              </a>
+            </dd>
+          </div>
+          <div class="flex gap-x-4">
+            <dt class="flex-none">
+              <span class="sr-only">Whatsapp</span>
+              <WhatsappIcon aria-hidden="true" class="h-7 w-6 text-primary-700" />
+            </dt>
+            <dd>
+              <a href="https://wa.link/epuzhm" class="hover:text-primary-900">
+                +1 (809) 729-4072
+              </a>
+            </dd>
+          </div>
+        </dl>
+      </div>
+    </div>
+    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d6494.356443452688!2d-69.95000582302144!3d18.47149788261264!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x8eaf89fb92e6ae9d%3A0x8cf455453e34f44c!2sClub%20Los%20Picos!5e1!3m2!1ses-419!2sdo!4v1743545299222!5m2!1ses-419!2sdo" class="w-full h-full lg:py-24 min-h-96" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+  </div>
+</div>

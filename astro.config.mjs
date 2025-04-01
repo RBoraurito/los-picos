@@ -15,4 +15,7 @@ export default defineConfig({
   },
   adapter: vercel({}),
   integrations: [react(), markdoc(), keystatic()],
+  experimental: {
+    svg: true,
+  },
 });

@@ -9,6 +9,7 @@ import Faq from '~/components/sections/faq.astro';
 
 // @ts-expect-error yaml load
 import HomeContent from '~/content/home/index.yaml';
+import Contact from '~/components/sections/contact.astro';
 ---
 
 <Layout>
@@ -18,4 +19,5 @@ import HomeContent from '~/content/home/index.yaml';
 	<FeaturedContent {...HomeContent.highlightedContent} />
 	<CardGrid {...HomeContent.activities} />
 	<Faq {...HomeContent.faq} className="pb-24" />
+	<Contact />
 </Layout>
