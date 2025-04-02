@@ -12,23 +12,25 @@ export interface Props {
   subtitle: string;
   image: string;
   cta?: CTA;
+  id?: string;
+  className?: string;
 }
 
-const { badge,title, subtitle, image, cta} = Astro.props;
+const { badge,title, subtitle, image, cta, id, className } = Astro.props;
 
 const imageUrl = await resolveImage(image);
 
 ---
 
-<section style={`background-image: url(${baseUrl() + imageUrl});`} class={clsx("rounded-xl w-full flex items-center justify-center min-h-[400px] lg:min-h-[700px] bg-blend-overlay bg-secondary-800 bg-no-repeat bg-cover my-8", containerStyles)}>
+<section id={id} style={`background-image: url(${baseUrl() + imageUrl});`} class={clsx("rounded-xl w-full flex items-center justify-center min-h-[400px] lg:min-h-[700px] bg-blend-overlay bg-secondary-800 bg-no-repeat bg-cover my-8", containerStyles, className)}>
   <div class="text-center max-w-xl">
     { badge && (
       <p class="text-sm uppercase text-primary-400 font-bold bg-primary-400/5 border border-primary-400 rounded-full px-4 py-1 w-fit text-center mx-auto mb-4">{badge}</p>
     )}
-    <h1 class="text-4xl lg:text-6xl font-bold text-neutral-100 mb-1">{title}</h1>
-    <p class="text-base lg:text-lg text-neutral-100 mb-8">{subtitle}</p>
+    <h1 class="text-4xl lg:text-6xl font-bold text-gray-100 mb-1">{title}</h1>
+    <p class="text-base lg:text-lg text-gray-100 mb-8">{subtitle}</p>
     {cta && (
-      <Button href={cta.url} variant={cta.variant} target={cta.external ? "_blank" : undefined}>
+      <Button as="a" href={cta.url} variant={cta.variant} target={cta.external ? "_blank" : undefined}>
         {cta.text}
       </Button>
     )}

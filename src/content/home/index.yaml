@@ -5,7 +5,7 @@ hero:
   image: /home/hero/image.jpg
   cta:
     text: Unete a Los Picos
-    url: '#contacto'
+    url: '#preguntas'
     variant: primary
     external: false
 featuredInfo:
@@ -91,9 +91,9 @@ highlightedContent:
   image: /home/highlightedContent/image.jpg
   cta:
     text: Conocenos
-    url: '#about'
+    url: '#contacto'
     variant: primary
-    external: true
+    external: false
 activities:
   supportText: Jovenes
   title: Actividades del club los picos

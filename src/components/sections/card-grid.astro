@@ -2,19 +2,21 @@
 import type { ICard } from '~/cms/blocks/card';
 import Image from '../image.astro';
 import { marked } from 'marked';
+import clsx from 'clsx';
 
 interface Props {
   supportText: string;
   title: string;
-  subtitle: string;
   content: string;
   cards: ICard[];
+  id?: string;
+  className?: string;
 }
 
-const { supportText, title, subtitle, content, cards } = Astro.props;
+const { supportText, title, content, cards, id, className } = Astro.props;
 ---
 
-<div class="bg-white py-24 sm:py-32">
+<div id={id} class={clsx("bg-white py-24 sm:py-32", className)}>
   <div class="mx-auto max-w-2xl px-6 lg:max-w-7xl lg:px-8">
     <p class="text-base/7 font-semibold text-primary-600">{supportText}</p>
     <h2 class="mt-2 text-pretty text-4xl font-semibold tracking-tight text-gray-950 sm:text-5xl mb-2">

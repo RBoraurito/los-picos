@@ -12,12 +12,13 @@ interface Props {
     content: string;
   }[];
   className?: string;
+  id?: string;
 }
 
-const { title, subtitle, columns, className } = Astro.props;
+const { title, subtitle, columns, className, id } = Astro.props;
 ---
 
-<div class={clsx(containerStyles, className)}>
+<div id={id} class={clsx(containerStyles, className)}>
   {(title || subtitle) && (
     <div class="mx-auto max-w-2xl lg:mx-0">
       {title && (

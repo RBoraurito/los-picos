@@ -13,11 +13,11 @@ import Contact from '~/components/sections/contact.astro';
 ---
 
 <Layout>
-  <Hero image={HomeContent.hero.image} title={HomeContent.hero.title} badge={HomeContent.hero.badge} subtitle={HomeContent.hero.subtitle} cta={HomeContent.hero.cta} />
-  <ContentWGridImages supportText={HomeContent.featuredInfo.supportText} title={HomeContent.featuredInfo.title} subtitle={HomeContent.featuredInfo.subtitle} content={HomeContent.featuredInfo.content} images={HomeContent.featuredInfo.images} className="py-24 px-2 sm:py-28" />
+  <Hero {...HomeContent.hero} />
+  <ContentWGridImages id='nosotros' {...HomeContent.featuredInfo} className="py-24 px-2 sm:py-28" />
 	<ContentWColumns {...HomeContent.columns} className="pb-24 px-2 sm:pb-28" />
-	<FeaturedContent {...HomeContent.highlightedContent} />
-	<CardGrid {...HomeContent.activities} />
-	<Faq {...HomeContent.faq} className="pb-24" />
-	<Contact />
+	<FeaturedContent id='aniversario' {...HomeContent.highlightedContent} />
+	<CardGrid id='actividades' {...HomeContent.activities} />
+	<Faq id='preguntas' {...HomeContent.faq} className="pb-24" />
+	<Contact id='contacto' />
 </Layout>

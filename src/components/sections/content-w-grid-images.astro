@@ -11,20 +11,21 @@ interface Props {
   content: string;
   images: string[];
   className?: string;
+  id?: string;
 }
 
-const {supportText, title, subtitle, content, images, className} = Astro.props;
+const {supportText, title, subtitle, content, images, className, id} = Astro.props;
 ---
-<div class={clsx("overflow-hidden", className)}>
+<div id={id} class={clsx("overflow-hidden", className)}>
   <div class="mx-auto max-w-2xl px-6 lg:max-w-7xl lg:px-8">
     <div class="max-w-4xl">
       {supportText && (
         <p class="text-base/7 font-semibold text-primary-600">{supportText}</p>
       )}
-      <h2 class="text-pretty text-4xl font-semibold tracking-tight text-dark-600 sm:text-5xl">
+      <h2 class="text-pretty text-4xl font-semibold tracking-tight text-gray-600 sm:text-5xl">
         {title}
       </h2>
-      <p class="mt-4 text-balance lg:text-xl/8 text-neutral-900">
+      <p class="mt-4 text-balance lg:text-xl/8 text-gray-900">
         {subtitle}
       </p>
     </div>
