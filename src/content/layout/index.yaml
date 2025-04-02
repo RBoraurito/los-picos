@@ -8,5 +8,14 @@ headerLinks:
     url: /cooperadores
   - text: Recursos
     url: /recursos
-footerLinks: []
-socialMediaButtons: []
+footerLinks:
+  - text: Normas de convivencia
+    url: >-
+      /NORMAS-DE-CONVIVENCIA-PARA-LA-SEGURIDAD-DE-LOS-MENORES-DEL-CLUB-LOS-PICOS.pdf
+socialMediaButtons:
+  - platform: facebook
+    url: https://www.facebook.com/Club-Los-Picos-12414032273/
+  - platform: instagram
+    url: https://www.instagram.com/clublospicos/
+  - platform: whatsapp
+    url: https://wa.link/epuzhm

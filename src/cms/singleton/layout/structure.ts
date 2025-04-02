@@ -38,6 +38,7 @@ export const layout = singleton({
             { label: "Twitter", value: "twitter" },
             { label: "Instagram", value: "instagram" },
             { label: "LinkedIn", value: "linkedin" },
+            { label: "Whatsapp", value: "whatsapp" },
           ],
           defaultValue: "facebook",
         }),

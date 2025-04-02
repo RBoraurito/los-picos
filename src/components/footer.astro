@@ -1,0 +1,48 @@
+---
+import WhatsappIcon from '~/assets/social/whatsapp.svg';
+import FacebookIcon from '~/assets/social/facebook.svg';
+import InstagramIcon from '~/assets/social/instagram.svg';
+
+interface FooterProps {
+  footerLinks: {
+    text: string;
+    url: string;
+  }[];
+  socialMediaButtons: {
+    platform: string;
+    url: string;
+  }[];
+}
+
+// @ts-expect-error yaml load
+import layoutData from "../content/layout/index.yaml";
+
+const { footerLinks: main, socialMediaButtons: social } = layoutData as FooterProps;
+
+const socialIcons = {
+  facebook: FacebookIcon,
+  instagram: InstagramIcon,
+  whatsapp: WhatsappIcon,
+};
+---
+
+<footer class="">
+  <div class="mx-auto max-w-7xl overflow-hidden px-6 py-12 sm:py-20 lg:px-8 bg-primary-950 rounded-t-4xl">
+    <nav aria-label="Footer" class="-mb-6 flex flex-wrap justify-center gap-x-12 gap-y-3 text-sm/6">
+      {main.map((item) => (
+        <a href={item.url} class="text-gray-100 hover:text-primary-100">
+          {item.text}
+        </a>
+      ))}
+    </nav>
+    <div class="mt-16 flex justify-center gap-x-10">
+      {social.map((item) => (
+        <a href={item.url} class="text-gray-100 hover:text-primary-100">
+          <span class="sr-only">{item.platform}</span>
+          <socialIcons[item.platform] aria-hidden="true" class="size-6" />
+        </a>
+      ))}
+    </div>
+    <p class="mt-10 text-center text-sm/6 text-gray-100">&copy; {new Date().getFullYear()} Club los picos. Todos los derechos reservados.</p>
+  </div>
+</footer>
