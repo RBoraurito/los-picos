@@ -3,10 +3,9 @@ import { defineConfig } from "astro/config";
 import tailwindcss from "@tailwindcss/vite";
 
 import react from "@astrojs/react";
-import markdoc from "@astrojs/markdoc";
-import keystatic from "@keystatic/astro";
 import yaml from "@rollup/plugin-yaml";
 import vercel from "@astrojs/vercel/serverless";
+import sanity from "@sanity/astro";
 
 // https://astro.build/config
 export default defineConfig({
@@ -14,7 +13,15 @@ export default defineConfig({
     plugins: [tailwindcss(), yaml()],
   },
   adapter: vercel({}),
-  integrations: [react(), markdoc(), keystatic()],
+  integrations: [
+    react(),
+    sanity({
+      projectId: process.env.SANITY_PROJECT_ID,
+      dataset: process.env.SANITY_DATASET_NAME,
+      // Set useCdn to false if you're building statically.
+      useCdn: false,
+    }),
+  ],
   experimental: {
     svg: true,
   },
