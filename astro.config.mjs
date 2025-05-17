@@ -6,6 +6,9 @@ import react from "@astrojs/react";
 import yaml from "@rollup/plugin-yaml";
 import vercel from "@astrojs/vercel/serverless";
 import sanity from "@sanity/astro";
+import { loadEnv } from "vite";
+
+const env = loadEnv(process.env.NODE_ENV ?? "", process.cwd(), "");
 
 // https://astro.build/config
 export default defineConfig({
@@ -16,9 +19,9 @@ export default defineConfig({
   integrations: [
     react(),
     sanity({
-      projectId: process.env.SANITY_PROJECT_ID,
-      dataset: process.env.SANITY_DATASET_NAME,
-      // Set useCdn to false if you're building statically.
+      projectId: env.PUBLIC_SANITY_PROJECT_ID,
+      dataset: env.PUBLIC_SANITY_DATASET,
+      studioBasePath: "/admin",
       useCdn: false,
     }),
   ],
