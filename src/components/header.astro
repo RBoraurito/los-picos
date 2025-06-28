@@ -2,21 +2,25 @@
 import clsx from "clsx";
 import { containerStyles } from "../styles/container";
 import { Button } from "./button";
-import Image from "./image.astro";
 import type { GlobalConfig } from "~/types/sanity";
+import { urlForImage } from "~/lib/image-resolver";
+import { Image } from "astro:assets";
+import { resolveLink } from "~/lib/resolve-link";
 
 const currentUrl = Astro.url.pathname;
 
 type Props = NonNullable<GlobalConfig['header']>
 
 const { logo, links, cta } = Astro.props;
+const image = logo ? urlForImage(logo) : null;
+const imageUrl = logo ? image?.url() : null;
 ---
 
 <header class={clsx(containerStyles, "py-6")}>
   <div class="flex justify-between items-center">
     <a href="/" class="text-lg font-medium uppercase">
-      {logo ? (
-        <Image src={logo} alt="Logo club los picos" class="w-12 h-12" />
+      {imageUrl ? (
+        <Image src={imageUrl} inferSize alt="Logo club los picos" class="w-12 h-12" />
       ) : (
         "Club Los Picos"
       )}
@@ -26,10 +30,10 @@ const { logo, links, cta } = Astro.props;
         {links?.map((link) => (
           <li>
             <a 
-              href={link.url} 
+              {...resolveLink(link)}
               class={clsx(
                 "hover:text-primary-500 transition-colors duration-200",
-                currentUrl === link.url && "text-primary-700"
+                currentUrl === new URL(link.url ?? "").pathname && "text-primary-700"
               )}
             >
               {link.title}
@@ -39,8 +43,8 @@ const { logo, links, cta } = Astro.props;
       </ul>
     </nav>
     {cta && (
-      <Button as="a" href="#contacto">
-        Contacto
+      <Button as="a" href={cta.url}>
+        {cta.title}
       </Button>
     )}
   </div>
