@@ -1,5 +1,6 @@
 import { defineField, defineType } from "sanity";
 import { SBHeader } from "../blocks/header";
+import { SBFooter } from "../blocks/footer";
 
 export const STGlobalConfig = defineType({
   name: "globalConfig",
@@ -14,5 +15,6 @@ export const STGlobalConfig = defineType({
       initialValue: "Default",
     }),
     SBHeader,
+    SBFooter,
   ],
 });
