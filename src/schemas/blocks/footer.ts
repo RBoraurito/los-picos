@@ -16,5 +16,15 @@ export const SBFooter = defineField({
         },
       ],
     }),
+    defineField({
+      name: "socialLinks",
+      title: "Redes sociales",
+      type: "array",
+      of: [
+        {
+          type: "link",
+        },
+      ],
+    }),
   ],
 });

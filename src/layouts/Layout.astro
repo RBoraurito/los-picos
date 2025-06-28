@@ -21,9 +21,11 @@ const config = await sanityClient.fetch(globalConfigQuery);
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Noto+Sans:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
 	</head>
-	<body class="bg-white">
+	<body class="bg-white min-h-screen grid grid-rows-[auto_1fr_auto]">
 		<Header {...config.header} />
-		<slot />
-		<!-- <Footer/> -->
+		<main>
+			<slot />
+		</main>
+		<Footer {...config.footer}/>
 	</body>
 </html>

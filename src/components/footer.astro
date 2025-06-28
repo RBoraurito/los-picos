@@ -2,6 +2,8 @@
 import WhatsappIcon from '~/assets/social/whatsapp.svg';
 import FacebookIcon from '~/assets/social/facebook.svg';
 import InstagramIcon from '~/assets/social/instagram.svg';
+import type { GlobalConfig } from '~/types/sanity';
+import { resolveLink } from '~/lib/resolve-link';
 
 const socialIcons = {
   facebook: FacebookIcon,
@@ -9,34 +11,25 @@ const socialIcons = {
   whatsapp: WhatsappIcon,
 };
 
-interface Props {
-  footerLinks: {
-    text: string;
-    url: string;
-  }[];
-  socialButtons: {
-    platform: string;
-    url: string;
-  }[];
-}
+type Props = NonNullable<GlobalConfig['footer']>; 
 
-const { footerLinks: main, socialButtons: social } = Astro.props;
+const { links, socialLinks } = Astro.props;
 ---
 
 <footer class="">
   <div class="mx-auto max-w-7xl overflow-hidden px-6 py-12 sm:py-20 lg:px-8 bg-primary-950 rounded-t-4xl">
     <nav aria-label="Footer" class="-mb-6 flex flex-wrap justify-center gap-x-12 gap-y-3 text-sm/6">
-      {main.map((item) => (
-        <a href={item.url} class="text-gray-100 hover:text-primary-100">
-          {item.text}
+      {links?.map((item) => (
+        <a {...resolveLink(item)} class="text-gray-100 hover:text-primary-100">
+          {item.title}
         </a>
       ))}
     </nav>
     <div class="mt-16 flex justify-center gap-x-10">
-      {social.map((item) => (
-        <a href={item.url} class="text-gray-100 hover:text-primary-100">
-          <span class="sr-only">{item.platform}</span>
-          <socialIcons[item.platform] aria-hidden="true" class="size-6" />
+      {socialLinks?.map((item) => (
+        <a {...resolveLink(item)} class="text-gray-100 hover:text-primary-100">
+          <span class="sr-only">{item.icon}</span>
+          <socialIcons[item.icon] aria-hidden="true" class="size-6" />
         </a>
       ))}
     </div>
