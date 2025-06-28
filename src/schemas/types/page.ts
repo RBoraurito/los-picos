@@ -14,6 +14,17 @@ export const STPage = defineType({
       validation: (Rule) => Rule.required().error("El título es obligatorio"),
       initialValue: "Default",
     }),
+    defineField({
+      name: "slug",
+      title: "Slug",
+      type: "string",
+      validation: (Rule) =>
+        Rule.required()
+          .error("El slug es obligatorio")
+          .regex(/^[a-z0-9\/]+(?:-[a-z0-9\/]+)*$/)
+          .error("El slug debe contener solo letras minúsculas, números, guiones y barras"),
+      initialValue: "default",
+    }),
     SBSections,
   ],
   preview: {
