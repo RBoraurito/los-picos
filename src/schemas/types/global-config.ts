@@ -18,6 +18,12 @@ export const STGlobalConfig = defineType({
       validation: (Rule) => Rule.required().error("El título es obligatorio"),
       initialValue: "Default",
     }),
+    defineField({
+      name: "active",
+      title: "Activo",
+      type: "boolean",
+      description: "Indica si la configuración global está activa",
+    }),
     SBHeader,
     SBFooter,
   ],
