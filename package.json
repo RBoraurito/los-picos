@@ -6,7 +6,9 @@
     "dev": "astro dev",
     "build": "astro build",
     "preview": "astro preview",
-    "astro": "astro"
+    "astro": "astro",
+    "sanity:extract": "sanity schema extract",
+    "sanity:generate": "sanity typegen generate --output ./src/types/sanity.ts"
   },
   "dependencies": {
     "@astrojs/react": "^4.2.3",
@@ -14,9 +16,11 @@
     "@heroicons/react": "^2.2.0",
     "@sanity/astro": "^3.2.6",
     "@sanity/client": "^6.29.1",
+    "@sanity/image-url": "^1.1.0",
     "@tailwindcss/vite": "^4.0.17",
     "astro": "^5.5.5",
     "clsx": "^2.1.1",
+    "groq": "^3.95.0",
     "react": "^19.1.0",
     "react-dom": "^19.1.0",
     "react-is": "^19.1.0",

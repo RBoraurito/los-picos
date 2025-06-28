@@ -4,7 +4,7 @@ import tailwindcss from "@tailwindcss/vite";
 
 import react from "@astrojs/react";
 import yaml from "@rollup/plugin-yaml";
-import vercel from "@astrojs/vercel/serverless";
+import vercel from "@astrojs/vercel";
 import sanity from "@sanity/astro";
 import { loadEnv } from "vite";
 
@@ -25,7 +25,4 @@ export default defineConfig({
       useCdn: false,
     }),
   ],
-  experimental: {
-    svg: true,
-  },
 });

@@ -3,27 +3,24 @@ import WhatsappIcon from '~/assets/social/whatsapp.svg';
 import FacebookIcon from '~/assets/social/facebook.svg';
 import InstagramIcon from '~/assets/social/instagram.svg';
 
-interface FooterProps {
-  footerLinks: {
-    text: string;
-    url: string;
-  }[];
-  socialMediaButtons: {
-    platform: string;
-    url: string;
-  }[];
-}
-
-// @ts-expect-error yaml load
-import layoutData from "../content/layout/index.yaml";
-
-const { footerLinks: main, socialMediaButtons: social } = layoutData as FooterProps;
-
 const socialIcons = {
   facebook: FacebookIcon,
   instagram: InstagramIcon,
   whatsapp: WhatsappIcon,
 };
+
+interface Props {
+  footerLinks: {
+    text: string;
+    url: string;
+  }[];
+  socialButtons: {
+    platform: string;
+    url: string;
+  }[];
+}
+
+const { footerLinks: main, socialButtons: social } = Astro.props;
 ---
 
 <footer class="">

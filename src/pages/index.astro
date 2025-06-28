@@ -1,23 +1,13 @@
 ---
-import Hero from '~/components/sections/hero.astro';
 import Layout from '../layouts/Layout.astro';
-import ContentWGridImages from '~/components/sections/content-w-grid-images.astro';
-import FeaturedContent from '~/components/sections/featured-content.astro';
-import ContentWColumns from '~/components/sections/content-w-columns.astro';
-import CardGrid from '~/components/sections/card-grid.astro';
-import Faq from '~/components/sections/faq.astro';
-
-// @ts-expect-error yaml load
-import HomeContent from '~/content/home/index.yaml';
-import Contact from '~/components/sections/contact.astro';
 ---
 
 <Layout>
-  <Hero {...HomeContent.hero} />
-  <ContentWGridImages id='nosotros' {...HomeContent.featuredInfo} className="py-24 px-2 sm:py-28" />
+  <!-- <Hero {...HomeContent.hero} /> -->
+  <!-- <ContentWGridImages id='nosotros' {...HomeContent.featuredInfo} className="py-24 px-2 sm:py-28" />
 	<ContentWColumns {...HomeContent.columns} className="pb-24 px-2 sm:pb-28" />
 	<FeaturedContent id='aniversario' {...HomeContent.highlightedContent} />
 	<CardGrid id='actividades' {...HomeContent.activities} />
 	<Faq id='preguntas' {...HomeContent.faq} className="pb-24" />
-	<Contact id='contacto' />
+	<Contact id='contacto' /> -->
 </Layout>
