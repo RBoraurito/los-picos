@@ -13,6 +13,33 @@
  */
 
 // Source: schema.json
+export type Page = {
+  _id: string;
+  _type: "page";
+  _createdAt: string;
+  _updatedAt: string;
+  _rev: string;
+  title?: string;
+  slug?: string;
+  sections?: Array<{
+    title?: string;
+    image?: {
+      asset?: {
+        _ref: string;
+        _type: "reference";
+        _weak?: boolean;
+        [internalGroqTypeReferenceTo]?: "sanity.imageAsset";
+      };
+      media?: unknown;
+      hotspot?: SanityImageHotspot;
+      crop?: SanityImageCrop;
+      _type: "image";
+    };
+    _type: "hero";
+    _key: string;
+  }>;
+};
+
 export type GlobalConfig = {
   _id: string;
   _type: "globalConfig";
@@ -20,6 +47,7 @@ export type GlobalConfig = {
   _updatedAt: string;
   _rev: string;
   title?: string;
+  active?: boolean;
   header?: {
     logo?: {
       asset?: {
@@ -174,11 +202,11 @@ export type SanityAssetSourceData = {
   url?: string;
 };
 
-export type AllSanitySchemaTypes = GlobalConfig | Link | SanityImagePaletteSwatch | SanityImagePalette | SanityImageDimensions | SanityImageHotspot | SanityImageCrop | SanityFileAsset | SanityImageAsset | SanityImageMetadata | Geopoint | Slug | SanityAssetSourceData;
+export type AllSanitySchemaTypes = Page | GlobalConfig | Link | SanityImagePaletteSwatch | SanityImagePalette | SanityImageDimensions | SanityImageHotspot | SanityImageCrop | SanityFileAsset | SanityImageAsset | SanityImageMetadata | Geopoint | Slug | SanityAssetSourceData;
 export declare const internalGroqTypeReferenceTo: unique symbol;
 // Source: ./src/queries/global-config.ts
 // Variable: globalConfigQuery
-// Query: *[_type == 'globalConfig'][0]
+// Query: *[_type == 'globalConfig' && active == true][0]
 export type GlobalConfigQueryResult = {
   _id: string;
   _type: "globalConfig";
@@ -186,6 +214,7 @@ export type GlobalConfigQueryResult = {
   _updatedAt: string;
   _rev: string;
   title?: string;
+  active?: boolean;
   header?: {
     logo?: {
       asset?: {
@@ -214,10 +243,47 @@ export type GlobalConfigQueryResult = {
   };
 } | null;
 
+// Source: ./src/queries/page.ts
+// Variable: getAllPagesQuery
+// Query: *[_type == "page"]{  _id,  slug,}
+export type GetAllPagesQueryResult = Array<{
+  _id: string;
+  slug: string | null;
+}>;
+// Variable: getPageQuery
+// Query: *[_type == "page" && slug == $slug][0]{  _id,  title,  slug,  sections[]{    _id,    title,    slug,    ...,    "id": _key  }}
+export type GetPageQueryResult = {
+  _id: string;
+  title: string | null;
+  slug: string | null;
+  sections: Array<{
+    _id: null;
+    title?: string;
+    slug: null;
+    image?: {
+      asset?: {
+        _ref: string;
+        _type: "reference";
+        _weak?: boolean;
+        [internalGroqTypeReferenceTo]?: "sanity.imageAsset";
+      };
+      media?: unknown;
+      hotspot?: SanityImageHotspot;
+      crop?: SanityImageCrop;
+      _type: "image";
+    };
+    _type: "hero";
+    _key: string;
+    id: string;
+  }> | null;
+} | null;
+
 // Query TypeMap
 import "@sanity/client";
 declare module "@sanity/client" {
   interface SanityQueries {
-    "*[_type == 'globalConfig'][0]": GlobalConfigQueryResult;
+    "*[_type == 'globalConfig' && active == true][0]": GlobalConfigQueryResult;
+    "*[_type == \"page\"]{\n  _id,\n  slug,\n}": GetAllPagesQueryResult;
+    "*[_type == \"page\" && slug == $slug][0]{\n  _id,\n  title,\n  slug,\n  sections[]{\n    _id,\n    title,\n    slug,\n    ...,\n    \"id\": _key\n  }\n}": GetPageQueryResult;
   }
 }

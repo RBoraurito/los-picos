@@ -1,0 +1,26 @@
+---
+import { sanityClient } from 'sanity:client';
+import Layout from '../layouts/Layout.astro';
+import { getAllPagesQuery, getPageQuery } from '~/queries/page';
+
+export async function getStaticPaths() {
+  const pages = await sanityClient.fetch<{ slug: string }[]>(getAllPagesQuery);
+
+  return pages.map(({ slug }) => {
+    return {
+      params: { slug },
+    };
+  });
+}
+
+const { slug } = Astro.params;
+
+const page = await sanityClient.fetch(getPageQuery, {
+  slug: slug ?? '/',
+});
+
+if (!page) return Astro.redirect("/404");
+---
+
+<Layout>
+</Layout>
