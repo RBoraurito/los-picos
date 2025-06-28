@@ -1,5 +1,6 @@
 import { defineConfig } from "sanity";
 import { structureTool } from "sanity/structure";
+import { STypes } from "~/schemas/types";
 
 export default defineConfig({
   name: "club-los-picos",
@@ -8,8 +9,6 @@ export default defineConfig({
   dataset: import.meta.env.PUBLIC_SANITY_DATASET ?? "",
   plugins: [structureTool()],
   schema: {
-    types: [
-      /* your content types here*/
-    ],
+    types: STypes,
   },
 });
