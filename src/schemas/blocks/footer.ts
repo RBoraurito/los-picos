@@ -4,6 +4,7 @@ export const SBFooter = defineField({
   name: "footer",
   title: "Pie de página",
   type: "object",
+  group: "footer",
   fields: [
     defineField({
       name: "links",

@@ -1,5 +1,20 @@
 import { defineField } from "sanity";
 
+const linkType = [
+  { title: "Interno", value: "internal" },
+  { title: "Externo", value: "external" },
+  { title: "Descarga", value: "download" },
+];
+
+const linkIcon = [
+  { title: "Ninguno", value: "" },
+  { title: "Enlace", value: "link" },
+  { title: "Descarga", value: "download" },
+  { title: "Instagram", value: "instagram" },
+  { title: "Facebook", value: "facebook" },
+  { title: "Youtube", value: "youtube" },
+];
+
 export const SBLink = defineField({
   name: "link",
   title: "Enlace",
@@ -17,11 +32,7 @@ export const SBLink = defineField({
       description: "Selecciona el tipo de enlace",
       type: "string",
       options: {
-        list: [
-          { title: "Interno", value: "internal" },
-          { title: "Externo", value: "external" },
-          { title: "Descarga", value: "download" },
-        ],
+        list: linkType,
       },
       initialValue: "internal",
     },
@@ -39,23 +50,9 @@ export const SBLink = defineField({
       type: "string",
       description: "Nombre del icono a usar",
       options: {
-        list: [
-          { title: "Ninguno", value: "" },
-          { title: "Enlace", value: "link" },
-          { title: "Descarga", value: "download" },
-          { title: "Instagram", value: "instagram" },
-          { title: "Facebook", value: "facebook" },
-          { title: "Youtube", value: "youtube" },
-        ],
+        list: linkIcon,
       },
       initialValue: "",
-    },
-    {
-      name: "children",
-      title: "Enlaces hijos",
-      type: "array",
-      of: [{ type: "link" }], // Referencia a este mismo esquema
-      description: "Enlaces hijos opcionales",
     },
   ],
   preview: {

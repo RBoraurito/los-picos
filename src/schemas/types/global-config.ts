@@ -6,6 +6,10 @@ export const STGlobalConfig = defineType({
   name: "globalConfig",
   title: "Configuración global",
   type: "document",
+  groups: [
+    { title: "Cabecera", name: "header" },
+    { title: "Pie de página", name: "footer" },
+  ],
   fields: [
     defineField({
       name: "title",

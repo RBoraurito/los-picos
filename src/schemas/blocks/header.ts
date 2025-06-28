@@ -4,6 +4,7 @@ export const SBHeader = defineField({
   name: "header",
   title: "Cabecera",
   type: "object",
+  group: "header",
   fields: [
     defineField({
       name: "logo",
