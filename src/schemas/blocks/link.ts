@@ -12,16 +12,43 @@ export const SBLink = defineField({
       validation: (Rule) => Rule.required(),
     },
     {
-      name: "isExternal",
-      title: "Abrir en nueva pestaña(enlace externo)",
-      description: "Marcar si el enlace es externo y debe abrirse en una nueva pestaña",
-      type: "boolean",
-      initialValue: false,
+      name: "type",
+      title: "Tipo de enlace",
+      description: "Selecciona el tipo de enlace",
+      type: "string",
+      options: {
+        list: [
+          { title: "Interno", value: "internal" },
+          { title: "Externo", value: "external" },
+          { title: "Descarga", value: "download" },
+        ],
+      },
+      initialValue: "internal",
     },
     {
       name: "url",
       title: "URL",
       type: "url",
+      validation(rule) {
+        return rule.required();
+      },
+    },
+    {
+      name: "icon",
+      title: "Icono",
+      type: "string",
+      description: "Nombre del icono a usar",
+      options: {
+        list: [
+          { title: "Ninguno", value: "" },
+          { title: "Enlace", value: "link" },
+          { title: "Descarga", value: "download" },
+          { title: "Instagram", value: "instagram" },
+          { title: "Facebook", value: "facebook" },
+          { title: "Youtube", value: "youtube" },
+        ],
+      },
+      initialValue: "",
     },
     {
       name: "children",

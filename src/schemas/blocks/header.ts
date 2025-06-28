@@ -6,6 +6,11 @@ export const SBHeader = defineField({
   type: "object",
   fields: [
     defineField({
+      name: "logo",
+      title: "Logo",
+      type: "image",
+    }),
+    defineField({
       name: "links",
       title: "Enlaces",
       type: "array",
@@ -14,6 +19,11 @@ export const SBHeader = defineField({
           type: "link",
         },
       ],
+    }),
+    defineField({
+      name: "cta",
+      title: "Llamada a la acción",
+      type: "link",
     }),
   ],
 });
