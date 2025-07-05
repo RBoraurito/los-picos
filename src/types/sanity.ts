@@ -37,6 +37,24 @@ export type Page = {
     };
     _type: "hero";
     _key: string;
+  } | {
+    title?: string;
+    text?: string;
+    image?: {
+      asset?: {
+        _ref: string;
+        _type: "reference";
+        _weak?: boolean;
+        [internalGroqTypeReferenceTo]?: "sanity.imageAsset";
+      };
+      media?: unknown;
+      hotspot?: SanityImageHotspot;
+      crop?: SanityImageCrop;
+      _type: "image";
+    };
+    variant?: "merge-with-top" | "default";
+    _type: "contentWImage";
+    _key: string;
   }>;
 };
 
@@ -257,6 +275,27 @@ export type GetPageQueryResult = {
   title: string | null;
   slug: string | null;
   sections: Array<{
+    _id: null;
+    title?: string;
+    slug: null;
+    text?: string;
+    image?: {
+      asset?: {
+        _ref: string;
+        _type: "reference";
+        _weak?: boolean;
+        [internalGroqTypeReferenceTo]?: "sanity.imageAsset";
+      };
+      media?: unknown;
+      hotspot?: SanityImageHotspot;
+      crop?: SanityImageCrop;
+      _type: "image";
+    };
+    variant?: "default" | "merge-with-top";
+    _type: "contentWImage";
+    _key: string;
+    id: string;
+  } | {
     _id: null;
     title?: string;
     slug: null;
