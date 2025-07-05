@@ -1,9 +1,5 @@
 ---
 import clsx from "clsx";
-import {Button} from "~/components/button"
-import type { CTA } from "~/types/cta";
-import { baseUrl } from "~/lib/resolver-base-url";
-import { containerStyles } from "~/styles/container";
 import type { SectionType } from "~/types/helper";
 import { urlForImage } from "~/lib/image-resolver";
 
@@ -14,8 +10,8 @@ const { title, image, _key } = Astro.props;
 const imageUrl = urlForImage(image!).url();
 ---
 
-<section id={_key} style={`background-image: url(${imageUrl});`} class={clsx("rounded-xl w-full flex items-center justify-center min-h-[400px] lg:min-h-[700px] bg-blend-overlay bg-secondary-800 bg-no-repeat bg-cover my-8", containerStyles)}>
-  <div class="text-center max-w-xl">
-    <h1 class="text-4xl lg:text-6xl font-bold text-gray-100 mb-1">{title}</h1>
+<section id={_key} style={`background-image: url(${imageUrl});`} class={clsx("w-full flex items-center justify-center min-h-[400px] lg:min-h-[700px] bg-blend-overlay bg-gray-700 bg-no-repeat bg-center bg-cover my-8")}>
+  <div class="text-center max-w-3xl py-12">
+    <h1 class="text-4xl sm:text-6xl uppercase lg:text-8xl font-bold text-gray-100">{title}</h1>
   </div>
 </section>

@@ -2,12 +2,25 @@
 import { containerStyles } from '~/styles/container';
 import clsx from 'clsx';
 import type { SectionType } from '~/types/helper';
+import { urlForImage } from "~/lib/image-resolver";
 
 type Props = SectionType<'content-w-image'>;
 
-const {text, images, id, className} = Astro.props;
+const {title, text, image, _key} = Astro.props;
 
+const imageProps = urlForImage(image!);
 ---
 
-<section id={id} class={clsx(containerStyles, "py-24 !max-w-5xl", className)}>
+<section id={_key} class={clsx(containerStyles, "py-24 !max-w-5xl")}>
+  <div class="grid grid-cols-1 lg:grid-cols-2 gap-8">
+    <div class="flex flex-col justify-center">
+      <h2 class="text-3xl font-bold mb-4">{title}</h2>
+      <p class="text-lg">{text}</p>
+    </div>
+    {image && (
+      <div class="relative">
+        <img src={imageProps.url()} alt={title} class="object-cover rounded-lg shadow-lg" />
+      </div>
+    )}
+  </div>
 </section>
