@@ -1,0 +1,13 @@
+---
+import { containerStyles } from '~/styles/container';
+import clsx from 'clsx';
+import type { SectionType } from '~/types/helper';
+
+type Props = SectionType<'content-w-image'>;
+
+const {text, images, id, className} = Astro.props;
+
+---
+
+<section id={id} class={clsx(containerStyles, "py-24 !max-w-5xl", className)}>
+</section>

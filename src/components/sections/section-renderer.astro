@@ -1,0 +1,41 @@
+---
+import type { AllSectionTypes } from '~/types/helper';
+import Hero from './hero.astro';
+import ContentWithImage from './content-w-image.astro';
+
+interface Props {
+  sections: AllSectionTypes[] | undefined;
+}
+
+const { sections } = Astro.props;
+
+const SECTION_MAP = {
+  hero: Hero,
+  contentWImage: ContentWithImage,
+} as const;
+
+const isSupportedSectionType = (type: string): type is keyof typeof SECTION_MAP => {
+  return type in SECTION_MAP;
+};
+---
+
+{sections && sections.length > 0 && (
+  <div class="sections-container">
+    {sections.map((section) => {
+      if (isSupportedSectionType(section._type)) {
+        const Component = SECTION_MAP[section._type];
+        // @ts-ignore: TypeScript does not know the specific props for each section type
+        return <Component {...section} />;
+      } else {
+        // Para desarrollo: mostrar tipos de secciones no implementadas
+        return import.meta.env.DEV ? (
+          <div class="p-4 bg-red-100 border border-red-300 rounded mb-4">
+            <p class="text-red-700">
+              Sección no implementada: <code>{section._type}</code>
+            </p>
+          </div>
+        ) : null;
+      }
+    })}
+  </div>
+)}

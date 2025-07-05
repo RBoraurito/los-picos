@@ -1,7 +1,10 @@
 ---
 import { sanityClient } from 'sanity:client';
 import Layout from '../layouts/Layout.astro';
+import SectionRenderer from '~/components/sections/section-renderer.astro';
 import { getAllPagesQuery, getPageQuery } from '~/queries/page';
+
+export const prerender = true;
 
 export async function getStaticPaths() {
   const pages = await sanityClient.fetch<{ slug: string }[]>(getAllPagesQuery);
@@ -23,4 +26,5 @@ if (!page) return Astro.redirect("/404");
 ---
 
 <Layout>
+  <SectionRenderer sections={page.sections} />
 </Layout>

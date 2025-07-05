@@ -1,7 +1,7 @@
 import { defineField } from "sanity";
 
 export const SSContentWImage = defineField({
-  name: "contentWImage",
+  name: "content-w-image",
   title: "Contenido con Imagen",
   description: "Sección que muestra un título, texto y una imagen",
   type: "object",
