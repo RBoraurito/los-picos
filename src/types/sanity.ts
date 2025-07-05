@@ -53,7 +53,7 @@ export type Page = {
       _type: "image";
     };
     variant?: "merge-with-top" | "default";
-    _type: "contentWImage";
+    _type: "content-w-image";
     _key: string;
   }>;
 };
@@ -292,7 +292,7 @@ export type GetPageQueryResult = {
       _type: "image";
     };
     variant?: "default" | "merge-with-top";
-    _type: "contentWImage";
+    _type: "content-w-image";
     _key: string;
     id: string;
   } | {

@@ -261,7 +261,7 @@
                     "type": "objectAttribute",
                     "value": {
                       "type": "string",
-                      "value": "contentWImage"
+                      "value": "content-w-image"
                     }
                   }
                 },
