@@ -20,6 +20,9 @@ dependencies:
   '@sanity/client':
     specifier: ^6.29.1
     version: 6.29.1(debug@4.4.0)
+  '@sanity/image-url':
+    specifier: ^1.1.0
+    version: 1.1.0
   '@tailwindcss/vite':
     specifier: ^4.0.17
     version: 4.0.17(vite@6.3.5)
@@ -29,6 +32,9 @@ dependencies:
   clsx:
     specifier: ^2.1.1
     version: 2.1.1
+  groq:
+    specifier: ^3.95.0
+    version: 3.97.1
   react:
     specifier: ^19.1.0
     version: 19.1.0
@@ -6247,6 +6253,11 @@ packages:
 
   /groq@3.88.3:
     resolution: {integrity: sha512-gPabfB9hWSxMuFodp4jp9n8Mau1B0/P9A6IiECMXG/mD8UoObWjDLd2hQOHhd3X9Wt0iXIYXZeN0t92Ig5KPmA==}
+    engines: {node: '>=18'}
+    dev: false
+
+  /groq@3.97.1:
+    resolution: {integrity: sha512-FpeRtJIPa/FMbX/Vb00/QeKvT8AMGMyTJ3jkg1yTwZ9g5uGmvQKJtBHO8+yPoZyj71YrPud7LCdMBy5ihdczqg==}
     engines: {node: '>=18'}
     dev: false
 
