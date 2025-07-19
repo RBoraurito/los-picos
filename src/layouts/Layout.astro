@@ -22,7 +22,7 @@ const config = await sanityClient.fetch(globalConfigQuery);
 	</head>
 	<body class="bg-white min-h-screen grid grid-rows-[auto_1fr_auto]">
 		<Header {...config.header} />
-		<main>
+		<main class="bg-gray-50">
 			<slot />
 		</main>
 		<Footer {...config.footer}/>

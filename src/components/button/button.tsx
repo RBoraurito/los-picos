@@ -10,7 +10,7 @@ const variantClasses = {
 
 export const Button = React.forwardRef<HTMLButtonElement | HTMLAnchorElement, ButtonProps>(({ variant = "primary", as = "button", className, ...props }, ref) => {
   const Component = as;
-  const classes = `px-4 py-2 rounded-xl transition-colors ${variantClasses[variant]} ${className}`;
+  const classes = `px-4 py-2 rounded-md transition-colors ${variantClasses[variant]} ${className}`;
 
   return as === "button" ? (
     <button {...(props as React.ButtonHTMLAttributes<HTMLButtonElement>)} className={classes} ref={ref as React.Ref<HTMLButtonElement>} />
