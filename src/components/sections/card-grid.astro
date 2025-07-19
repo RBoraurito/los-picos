@@ -7,7 +7,9 @@ import { resolveLink } from '~/lib/resolve-link';
 
 export type Props = SectionType<'cards-grid'>
 
-const { title, cards, bgImage, variant } = Astro.props;
+const { title, cards, bgImage, variant, titleTag } = Astro.props;
+const TitleTag = titleTag ?? 'p';
+
 const imageUrl = bgImage ? urlForImage(bgImage).url() : undefined;
 ---
 
@@ -16,9 +18,9 @@ const imageUrl = bgImage ? urlForImage(bgImage).url() : undefined;
   'bg-primary-600/90': variant === 'default'
 })}></div>
   <div class="relative mx-auto max-w-2xl px-6 lg:max-w-7xl lg:px-8 bg">
-    <h2 class="mt-2 text-pretty text-4xl font-semibold tracking-tight text-white sm:text-6xl mb-4 sm:mb-8 font-display">
+    <TitleTag class="mt-2 text-pretty text-4xl font-semibold tracking-tight text-white sm:text-6xl mb-4 sm:mb-8 font-display">
       {title}
-    </h2>
+    </TitleTag>
     <div class="grid lg:grid-cols-3 gap-6">
       {cards?.map(card => (
           <div class="bg-white relative py-12 px-8 flex items-center text-center h-full flex-col overflow-hidden rounded-md">

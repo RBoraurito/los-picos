@@ -1,4 +1,5 @@
 import { defineField } from "sanity";
+import { baseSectionFields } from "./base";
 
 export const SSFeaturedContent = defineField({
   name: "featured-content",
@@ -6,13 +7,7 @@ export const SSFeaturedContent = defineField({
   description: "Sección con contenido destacado",
   type: "object",
   fields: [
-    defineField({
-      name: "internalName",
-      title: "Nombre interno",
-      type: "string",
-      description: "Nombre interno para identificar la sección",
-      validation: (Rule) => Rule.required().error("El nombre interno es obligatorio"),
-    }),
+    ...baseSectionFields,
     defineField({
       name: "title",
       title: "Título",

@@ -7,7 +7,9 @@ import {PortableText} from '@portabletext/react'
 
 type Props = SectionType<'text-blocks-w-images'>;
 
-const {images, blocks, _key, title} = Astro.props;
+const {images, blocks, _key, title, titleTag} = Astro.props;
+
+const TitleTag = titleTag ?? 'p';
 ---
 
 <section id={_key} class="flex justify-center bg-gray-50">
@@ -26,7 +28,7 @@ const {images, blocks, _key, title} = Astro.props;
       </div>
     )}
     <div class="flex flex-col justify-start py-6">
-      <h2 class="text-3xl lg:text-5xl leading-snug font-display mb-4 text-primary-500">{title}</h2>
+      <TitleTag class="text-3xl lg:text-5xl leading-snug font-display mb-4 text-primary-500">{title}</TitleTag>
       <div class="grid lg:grid-cols-2 gap-4">
           {blocks?.map((block) => 
             block.content && (

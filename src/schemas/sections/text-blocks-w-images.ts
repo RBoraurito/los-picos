@@ -1,4 +1,5 @@
 import { defineField } from "sanity";
+import { baseSectionFields } from "./base";
 
 export const SSTextBlocksWImages = defineField({
   name: "text-blocks-w-images",
@@ -6,6 +7,7 @@ export const SSTextBlocksWImages = defineField({
   description: "Sección con bloques de texto y imágenes",
   type: "object",
   fields: [
+    ...baseSectionFields,
     defineField({
       name: "images",
       title: "Imagenes",

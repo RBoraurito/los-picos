@@ -1,10 +1,12 @@
 import { defineField } from "sanity";
+import { baseSectionFields } from "./base";
 
 export const SSTitle = defineField({
   name: "title",
   title: "Titulo",
   type: "object",
   fields: [
+    ...baseSectionFields,
     defineField({
       name: "title",
       title: "Título",

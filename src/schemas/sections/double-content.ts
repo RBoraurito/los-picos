@@ -1,4 +1,5 @@
 import { defineField } from "sanity";
+import { baseSectionFields } from "./base";
 
 export const SSDoubleContent = defineField({
   name: "double-content",
@@ -6,13 +7,7 @@ export const SSDoubleContent = defineField({
   description: "Sección con doble titulo y doble text con CTA opcional",
   type: "object",
   fields: [
-    defineField({
-      name: "internalName",
-      title: "Nombre interno",
-      type: "string",
-      description: "Nombre interno para identificar la sección",
-      validation: (Rule) => Rule.required().error("El nombre interno es obligatorio"),
-    }),
+    ...baseSectionFields,
     defineField({
       name: "sections",
       title: "Secciones",

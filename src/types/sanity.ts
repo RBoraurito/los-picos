@@ -83,6 +83,8 @@ export type Page = {
   title?: string;
   slug?: string;
   sections?: Array<{
+    internalName?: string;
+    titleTag?: "h1" | "h2" | "h3" | "h4" | "h5" | "h6" | "p";
     title?: string;
     image?: {
       asset?: {
@@ -99,6 +101,8 @@ export type Page = {
     _type: "hero";
     _key: string;
   } | {
+    internalName?: string;
+    titleTag?: "h1" | "h2" | "h3" | "h4" | "h5" | "h6" | "p";
     title?: string;
     text?: string;
     image?: {
@@ -117,6 +121,8 @@ export type Page = {
     _type: "content-w-image";
     _key: string;
   } | {
+    internalName?: string;
+    titleTag?: "h1" | "h2" | "h3" | "h4" | "h5" | "h6" | "p";
     title?: string;
     cards?: Array<{
       title?: string;
@@ -154,6 +160,7 @@ export type Page = {
     _key: string;
   } | {
     internalName?: string;
+    titleTag?: "h1" | "h2" | "h3" | "h4" | "h5" | "h6" | "p";
     sections?: Array<{
       title?: string;
       text?: string;
@@ -167,6 +174,7 @@ export type Page = {
     _key: string;
   } | {
     internalName?: string;
+    titleTag?: "h1" | "h2" | "h3" | "h4" | "h5" | "h6" | "p";
     title?: string;
     text?: string;
     bgImage?: {
@@ -184,11 +192,15 @@ export type Page = {
     _type: "featured-content";
     _key: string;
   } | {
+    internalName?: string;
+    titleTag?: "h1" | "h2" | "h3" | "h4" | "h5" | "h6" | "p";
     title?: string;
     variant?: "default";
     _type: "title";
     _key: string;
   } | {
+    internalName?: string;
+    titleTag?: "h1" | "h2" | "h3" | "h4" | "h5" | "h6" | "p";
     images?: Array<{
       asset?: {
         _ref: string;
@@ -328,7 +340,7 @@ export type Link = {
   title?: string;
   type?: "internal" | "external" | "download";
   url?: string;
-  icon?: "" | "link" | "download" | "instagram" | "facebook" | "youtube";
+  icon?: "" | "link" | "download" | "instagram" | "facebook" | "youtube" | "whatsapp";
 };
 
 export type AllSanitySchemaTypes = SanityImagePaletteSwatch | SanityImagePalette | SanityImageDimensions | SanityFileAsset | Geopoint | Slug | Page | GlobalConfig | SanityImageCrop | SanityImageHotspot | SanityImageAsset | SanityAssetSourceData | SanityImageMetadata | Link;
@@ -389,6 +401,8 @@ export type GetPageQueryResult = {
     _id: null;
     title?: string;
     slug: null;
+    internalName?: string;
+    titleTag?: "h1" | "h2" | "h3" | "h4" | "h5" | "h6" | "p";
     cards?: Array<{
       title?: string;
       content?: string;
@@ -428,6 +442,8 @@ export type GetPageQueryResult = {
     _id: null;
     title?: string;
     slug: null;
+    internalName?: string;
+    titleTag?: "h1" | "h2" | "h3" | "h4" | "h5" | "h6" | "p";
     text?: string;
     image?: {
       asset?: {
@@ -450,6 +466,7 @@ export type GetPageQueryResult = {
     title: null;
     slug: null;
     internalName?: string;
+    titleTag?: "h1" | "h2" | "h3" | "h4" | "h5" | "h6" | "p";
     sections?: Array<{
       title?: string;
       text?: string;
@@ -467,6 +484,7 @@ export type GetPageQueryResult = {
     title?: string;
     slug: null;
     internalName?: string;
+    titleTag?: "h1" | "h2" | "h3" | "h4" | "h5" | "h6" | "p";
     text?: string;
     bgImage?: {
       asset?: {
@@ -487,6 +505,8 @@ export type GetPageQueryResult = {
     _id: null;
     title?: string;
     slug: null;
+    internalName?: string;
+    titleTag?: "h1" | "h2" | "h3" | "h4" | "h5" | "h6" | "p";
     image?: {
       asset?: {
         _ref: string;
@@ -506,6 +526,8 @@ export type GetPageQueryResult = {
     _id: null;
     title?: string;
     slug: null;
+    internalName?: string;
+    titleTag?: "h1" | "h2" | "h3" | "h4" | "h5" | "h6" | "p";
     images?: Array<{
       asset?: {
         _ref: string;
@@ -548,6 +570,8 @@ export type GetPageQueryResult = {
     _id: null;
     title?: string;
     slug: null;
+    internalName?: string;
+    titleTag?: "h1" | "h2" | "h3" | "h4" | "h5" | "h6" | "p";
     variant?: "default";
     _type: "title";
     _key: string;

@@ -6,7 +6,8 @@ import { urlForImage } from "~/lib/image-resolver";
 
 type Props = SectionType<'content-w-image'>;
 
-const {title, text, image, _key, variant} = Astro.props;
+const {title, text, image, _key, variant, titleTag} = Astro.props;
+const TitleTag = titleTag ?? 'p';
 
 const imageProps = urlForImage(image!);
 ---
@@ -16,7 +17,7 @@ const imageProps = urlForImage(image!);
     'bg-white rounded-t-xl -mt-20': variant === 'merge-with-top',
   })}>
     <div class="flex flex-col justify-start py-6">
-      <h2 class="text-2xl lg:text-5xl leading-snug font-display mb-4 text-primary-500">{title}</h2>
+      <TitleTag class="text-2xl lg:text-5xl leading-snug font-display mb-4 text-primary-500">{title}</TitleTag>
       <p class="text-lg">{text}</p>
     </div>
     {image && (

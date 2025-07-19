@@ -1,5 +1,6 @@
 import { defineField } from "sanity";
 import { SBCard } from "../blocks/card";
+import { baseSectionFields } from "./base";
 
 export const SSCardsGrid = defineField({
   name: "cards-grid",
@@ -7,6 +8,7 @@ export const SSCardsGrid = defineField({
   description: "Sección con titulo, y tarjetas",
   type: "object",
   fields: [
+    ...baseSectionFields,
     defineField({
       name: "title",
       title: "Título",

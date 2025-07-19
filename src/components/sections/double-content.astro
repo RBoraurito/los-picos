@@ -7,7 +7,8 @@ import { resolveLink } from '~/lib/resolve-link';
 
 type Props = SectionType<'double-content'>;
 
-const {_key, sections} = Astro.props;
+const {_key, sections, titleTag} = Astro.props;
+const TitleTag = titleTag ?? 'p';
 
 const [section1, section2] = sections ?? [];
 ---
@@ -16,7 +17,7 @@ const [section1, section2] = sections ?? [];
   <div class={clsx(containerStyles, "grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-12 py-12")}>
     {section1 && (
       <div class="flex flex-col justify-start px-6 py-4 lg:px-12 lg:py-8 bg-secondary-600 rounded-md">
-        <h2 class="text-3xl lg:text-5xl leading-snug font-display mb-4 text-gray-50">{section1.title}</h2>
+        <TitleTag class="text-3xl lg:text-5xl leading-snug font-display mb-4 text-gray-50">{section1.title}</TitleTag>
         <p class="lg:text-lg text-gray-50 mb-4">{section1.text}</p>
         {section1.cta?.[0] && (
           <Button variant='neutral' {...resolveLink(section1.cta[0])}>
@@ -27,7 +28,7 @@ const [section1, section2] = sections ?? [];
     )}
     {section2 && (
       <div class="flex flex-col justify-start px-6 py-4 lg:px-12 lg:py-8">
-        <h2 class="text-3xl lg:text-5xl leading-snug font-display mb-4 text-primary-500">{section2.title}</h2>
+        <TitleTag class="text-3xl lg:text-5xl leading-snug font-display mb-4 text-primary-500">{section2.title}</TitleTag>
         <p class="lg:text-lg mb-4">{section2.text}</p>
         {section2.cta?.[0] && (
           <Button className='w-fit' variant='primary' {...resolveLink(section2.cta[0])}>

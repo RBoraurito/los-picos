@@ -1,10 +1,12 @@
 import { defineField } from "sanity";
+import { baseSectionFields } from "./base";
 
 export const SSHero = defineField({
   name: "hero",
   title: "Hero",
   type: "object",
   fields: [
+    ...baseSectionFields,
     defineField({
       name: "title",
       title: "Título",

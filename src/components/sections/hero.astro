@@ -5,13 +5,14 @@ import { urlForImage } from "~/lib/image-resolver";
 
 export type Props = SectionType<'hero'>
 
-const { title, image, _key } = Astro.props;
+const { title, image, _key, titleTag } = Astro.props;
+const TitleTag = titleTag ?? 'p';
 
 const imageUrl = urlForImage(image!).url();
 ---
 
 <section id={_key} style={`background-image: url(${imageUrl});`} class={clsx("w-full flex items-center justify-center min-h-[400px] lg:min-h-[700px] bg-blend-overlay bg-gray-700 bg-no-repeat bg-center bg-cover")}>
   <div class="text-center max-w-3xl py-12">
-    <h1 class="text-4xl sm:text-6xl uppercase lg:text-8xl text-gray-100 font-display">{title}</h1>
+    <TitleTag class="text-4xl sm:text-6xl uppercase lg:text-8xl text-gray-100 font-display">{title}</TitleTag>
   </div>
 </section>
