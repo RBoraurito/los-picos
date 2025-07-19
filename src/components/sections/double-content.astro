@@ -1,0 +1,28 @@
+---
+import { containerStyles } from '~/styles/container';
+import clsx from 'clsx';
+import type { SectionType } from '~/types/helper';
+
+type Props = SectionType<'double-content'>;
+
+const {_key, sections} = Astro.props;
+
+const [section1, section2] = sections ?? [];
+---
+
+<section id={_key} class="flex justify-center bg-gray-50">
+  <div class={clsx(containerStyles, "grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-12 py-12")}>
+    {section1 && (
+      <div class="flex flex-col justify-start px-6 py-4 lg:px-12 lg:py-8 bg-secondary-600 rounded-md">
+        <h2 class="text-3xl lg:text-5xl leading-snug font-display mb-4 text-gray-50">{section1.title}</h2>
+        <p class="lg:text-lg text-gray-50">{section1.text}</p>
+      </div>
+    )}
+    {section2 && (
+      <div class="flex flex-col justify-start px-6 py-4 lg:px-12 lg:py-8">
+        <h2 class="text-3xl lg:text-5xl leading-snug font-display mb-4 text-primary-500">{section2.title}</h2>
+        <p class="lg:text-lg">{section2.text}</p>
+      </div>
+    )}
+  </div>
+</section>

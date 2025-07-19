@@ -152,6 +152,16 @@ export type Page = {
     variant?: "default";
     _type: "cards-grid";
     _key: string;
+  } | {
+    sections?: Array<{
+      title?: string;
+      text?: string;
+      cta?: Link;
+      _type: "section";
+      _key: string;
+    }>;
+    _type: "double-content";
+    _key: string;
   }>;
 };
 
@@ -368,6 +378,20 @@ export type GetPageQueryResult = {
     };
     variant?: "default" | "merge-with-top";
     _type: "content-w-image";
+    _key: string;
+    id: string;
+  } | {
+    _id: null;
+    title: null;
+    slug: null;
+    sections?: Array<{
+      title?: string;
+      text?: string;
+      cta?: Link;
+      _type: "section";
+      _key: string;
+    }>;
+    _type: "double-content";
     _key: string;
     id: string;
   } | {
