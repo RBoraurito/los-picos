@@ -13,6 +13,7 @@ const linkIcon = [
   { title: "Instagram", value: "instagram" },
   { title: "Facebook", value: "facebook" },
   { title: "Youtube", value: "youtube" },
+  { title: "Whatsapp", value: "whatsapp" },
 ];
 
 export const SBLink = defineField({

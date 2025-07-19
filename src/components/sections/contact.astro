@@ -1,21 +1,15 @@
 ---
 import { BuildingOffice2Icon, EnvelopeIcon, PhoneIcon } from '@heroicons/react/24/outline'
 import clsx from 'clsx';
-import WhatsappIcon from '~/assets/social/whatsapp.svg';
+import { Icon } from 'astro-icon/components'
 
-interface Props {
-  className?: string;
-  id?: string;
-}
-
-const { className, id } = Astro.props;
 ---
 
-<div id={id} class={clsx("relative isolate bg-white", className)}>
+<div class={clsx("relative isolate bg-gray-50")}>
   <div class="mx-auto grid max-w-7xl grid-cols-1 lg:grid-cols-2">
     <div class="relative px-6 pb-20 pt-24 sm:pt-32 lg:static lg:px-8 lg:py-48">
       <div class="mx-auto max-w-xl lg:mx-0 lg:max-w-lg">
-        <h2 class="text-pretty text-4xl font-semibold tracking-tight text-primary-700 sm:text-5xl">
+        <h2 class="text-pretty text-4xl font-semibold tracking-tight text-primary-700 sm:text-5xl font-display">
           Visitanos
         </h2>
         <p class="mt-6 text-lg/8 text-gray-600">
@@ -55,14 +49,36 @@ const { className, id } = Astro.props;
               </a>
             </dd>
           </div>
-          <div class="flex gap-x-4">
+          <div class="flex gap-x-4 mb-4">
             <dt class="flex-none">
               <span class="sr-only">Whatsapp</span>
-              <WhatsappIcon aria-hidden="true" class="h-7 w-6 text-primary-700" />
+              <Icon name="whatsapp" aria-hidden="true" class="h-7 w-6 text-primary-700" />
             </dt>
             <dd>
               <a href="https://wa.link/epuzhm" class="hover:text-primary-900">
                 +1 (809) 729-4072
+              </a>
+            </dd>
+          </div>
+          <div class="flex gap-x-4 mb-4">
+            <dt class="flex-none">
+              <span class="sr-only">Instagram</span>
+              <Icon name="instagram" aria-hidden="true" class="h-7 w-6 text-primary-700" />
+            </dt>
+            <dd>
+              <a href="https://www.instagram.com/clublospicos/" class="hover:text-primary-900">
+                Club los Picos en Instagram
+              </a>
+            </dd>
+          </div>
+          <div class="flex gap-x-4 mb-4">
+            <dt class="flex-none">
+              <span class="sr-only">Facebook</span>
+              <Icon name="facebook" aria-hidden="true" class="h-7 w-6 text-primary-700" />
+            </dt>
+            <dd>
+              <a href="https://www.facebook.com/profile.php?id=100068639109009" class="hover:text-primary-900">
+                Club los Picos en Facebook
               </a>
             </dd>
           </div>

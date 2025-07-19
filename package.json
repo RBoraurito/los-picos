@@ -20,6 +20,7 @@
     "@sanity/image-url": "^1.1.0",
     "@tailwindcss/vite": "^4.0.17",
     "astro": "^5.5.5",
+    "astro-icon": "^1.1.5",
     "clsx": "^2.1.1",
     "groq": "^3.95.0",
     "react": "^19.1.0",

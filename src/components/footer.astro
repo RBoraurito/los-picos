@@ -1,15 +1,7 @@
 ---
-import WhatsappIcon from '~/assets/social/whatsapp.svg';
-import FacebookIcon from '~/assets/social/facebook.svg';
-import InstagramIcon from '~/assets/social/instagram.svg';
 import type { GlobalConfig } from '~/types/sanity';
 import { resolveLink } from '~/lib/resolve-link';
-
-const socialIcons = {
-  facebook: FacebookIcon,
-  instagram: InstagramIcon,
-  whatsapp: WhatsappIcon,
-};
+import {Icon} from 'astro-icon/components';
 
 type Props = NonNullable<GlobalConfig['footer']>; 
 
@@ -29,7 +21,7 @@ const { links, socialLinks } = Astro.props;
       {socialLinks?.map((item) => (
         <a {...resolveLink(item)} class="text-gray-100 hover:text-primary-100">
           <span class="sr-only">{item.icon}</span>
-          <socialIcons[item.icon] aria-hidden="true" class="size-6" />
+          <Icon name={item.icon} aria-hidden="true" class="size-6" />
         </a>
       ))}
     </div>

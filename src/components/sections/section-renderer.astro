@@ -7,6 +7,7 @@ import DoubleContent from './double-content.astro';
 import FeaturedContent from './featured-content.astro';
 import Title from './title.astro';
 import TextBlocksWImages from './text-blocks-w-images.astro';
+import Contact from './contact.astro';
 
 interface Props {
   sections: AllSectionTypes[] | undefined;
@@ -22,6 +23,7 @@ const SECTION_MAP = {
   'featured-content': FeaturedContent,
   title: Title,
   'text-blocks-w-images': TextBlocksWImages,
+  contact: Contact
 } as const;
 
 const isSupportedSectionType = (type: string): type is keyof typeof SECTION_MAP => {

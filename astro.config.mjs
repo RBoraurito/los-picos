@@ -6,6 +6,7 @@ import react from "@astrojs/react";
 import yaml from "@rollup/plugin-yaml";
 import vercel from "@astrojs/vercel";
 import sanity from "@sanity/astro";
+import icon from "astro-icon";
 import { loadEnv } from "vite";
 
 const env = loadEnv(process.env.NODE_ENV ?? "", process.cwd(), "");
@@ -17,6 +18,7 @@ export default defineConfig({
   },
   adapter: vercel({}),
   integrations: [
+    icon(),
     react(),
     sanity({
       projectId: env.PUBLIC_SANITY_PROJECT_ID,
