@@ -11,13 +11,13 @@ export type Props = SectionType<'featured-content'>
 const { title, text, bgImage } = Astro.props;
 const imageUrl = bgImage ? urlForImage(bgImage).url() : undefined;
 ---
-<div class={clsx("py-24 sm:py-32 bg-center bg-cover bg-no-repeat relative")} style={`background-image: url(${imageUrl});`}>
+<div class={clsx("py-12 sm:py-32 bg-center bg-cover bg-no-repeat relative")} style={`background-image: url(${imageUrl});`}>
   <div class="bg-gray-200/95 inset-0 absolute"></div>
-  <div class={clsx(containerStyles, 'grid lg:grid-cols-7 relative items-center')}>
-    <h2 class="mt-2 text-pretty text-center text-4xl font-semibold tracking-tight text-primary-600 sm:text-6xl mb-4 sm:mb-8 font-display col-span-2">
+  <div class={clsx(containerStyles, 'lg:grid lg:grid-cols-7 relative items-center')}>
+    <h2 class="mt-2 text-pretty lg:text-center text-4xl font-semibold tracking-tight text-primary-600 sm:text-6xl mb-4 sm:mb-8 font-display col-span-2">
       {title}
     </h2>
-    <div class="border-l-2 border-gray-600 col-span-5 py-4 px-16">
+    <div class="lg:border-l-2 border-gray-600 col-span-5 lg:py-4 lg:px-16">
       <p>
         {text}
       </p>
