@@ -1,0 +1,17 @@
+---
+import clsx from "clsx";
+import { containerStyles } from "~/styles/container";
+import type { SectionType } from "~/types/helper";
+
+export type Props = SectionType<'title'>
+
+const { title, _key, variant } = Astro.props;
+---
+
+<section id={_key} class={clsx("py-8 lg:py-12", {
+  "bg-primary-500": variant === 'default',
+})}>
+  <div class={clsx(containerStyles)}>
+    <p class="text-5xl text-center sm:text-6xl uppercase lg:text-8xl text-gray-50 font-display">{title}</p>
+  </div>
+</section>

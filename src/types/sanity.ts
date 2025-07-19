@@ -165,6 +165,29 @@ export type Page = {
     }>;
     _type: "double-content";
     _key: string;
+  } | {
+    internalName?: string;
+    title?: string;
+    text?: string;
+    bgImage?: {
+      asset?: {
+        _ref: string;
+        _type: "reference";
+        _weak?: boolean;
+        [internalGroqTypeReferenceTo]?: "sanity.imageAsset";
+      };
+      media?: unknown;
+      hotspot?: SanityImageHotspot;
+      crop?: SanityImageCrop;
+      _type: "image";
+    };
+    _type: "featured-content";
+    _key: string;
+  } | {
+    title?: string;
+    variant?: "default";
+    _type: "title";
+    _key: string;
   }>;
 };
 
@@ -404,6 +427,27 @@ export type GetPageQueryResult = {
     _id: null;
     title?: string;
     slug: null;
+    internalName?: string;
+    text?: string;
+    bgImage?: {
+      asset?: {
+        _ref: string;
+        _type: "reference";
+        _weak?: boolean;
+        [internalGroqTypeReferenceTo]?: "sanity.imageAsset";
+      };
+      media?: unknown;
+      hotspot?: SanityImageHotspot;
+      crop?: SanityImageCrop;
+      _type: "image";
+    };
+    _type: "featured-content";
+    _key: string;
+    id: string;
+  } | {
+    _id: null;
+    title?: string;
+    slug: null;
     image?: {
       asset?: {
         _ref: string;
@@ -417,6 +461,14 @@ export type GetPageQueryResult = {
       _type: "image";
     };
     _type: "hero";
+    _key: string;
+    id: string;
+  } | {
+    _id: null;
+    title?: string;
+    slug: null;
+    variant?: "default";
+    _type: "title";
     _key: string;
     id: string;
   }> | null;
