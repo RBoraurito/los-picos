@@ -4,6 +4,7 @@ import Hero from './hero.astro';
 import ContentWithImage from './content-w-image.astro';
 import CardGrid from './card-grid.astro';
 import DoubleContent from './double-content.astro';
+import FeaturedContent from './featured-content.astro';
 
 interface Props {
   sections: AllSectionTypes[] | undefined;
@@ -15,7 +16,8 @@ const SECTION_MAP = {
   hero: Hero,
   'content-w-image': ContentWithImage,
   'cards-grid': CardGrid,
-  'double-content': DoubleContent
+  'double-content': DoubleContent,
+  'featured-content': FeaturedContent
 } as const;
 
 const isSupportedSectionType = (type: string): type is keyof typeof SECTION_MAP => {
