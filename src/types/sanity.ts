@@ -153,10 +153,13 @@ export type Page = {
     _type: "cards-grid";
     _key: string;
   } | {
+    internalName?: string;
     sections?: Array<{
       title?: string;
       text?: string;
-      cta?: Link;
+      cta?: Array<{
+        _key: string;
+      } & Link>;
       _type: "section";
       _key: string;
     }>;
@@ -384,10 +387,13 @@ export type GetPageQueryResult = {
     _id: null;
     title: null;
     slug: null;
+    internalName?: string;
     sections?: Array<{
       title?: string;
       text?: string;
-      cta?: Link;
+      cta?: Array<{
+        _key: string;
+      } & Link>;
       _type: "section";
       _key: string;
     }>;

@@ -869,6 +869,13 @@
               {
                 "type": "object",
                 "attributes": {
+                  "internalName": {
+                    "type": "objectAttribute",
+                    "value": {
+                      "type": "string"
+                    },
+                    "optional": true
+                  },
                   "sections": {
                     "type": "objectAttribute",
                     "value": {
@@ -893,8 +900,22 @@
                           "cta": {
                             "type": "objectAttribute",
                             "value": {
-                              "type": "inline",
-                              "name": "link"
+                              "type": "array",
+                              "of": {
+                                "type": "object",
+                                "attributes": {
+                                  "_key": {
+                                    "type": "objectAttribute",
+                                    "value": {
+                                      "type": "string"
+                                    }
+                                  }
+                                },
+                                "rest": {
+                                  "type": "inline",
+                                  "name": "link"
+                                }
+                              }
                             },
                             "optional": true
                           },

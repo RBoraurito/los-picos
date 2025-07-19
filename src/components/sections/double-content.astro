@@ -2,6 +2,8 @@
 import { containerStyles } from '~/styles/container';
 import clsx from 'clsx';
 import type { SectionType } from '~/types/helper';
+import { Button } from '../button';
+import { resolveLink } from '~/lib/resolve-link';
 
 type Props = SectionType<'double-content'>;
 
@@ -15,13 +17,23 @@ const [section1, section2] = sections ?? [];
     {section1 && (
       <div class="flex flex-col justify-start px-6 py-4 lg:px-12 lg:py-8 bg-secondary-600 rounded-md">
         <h2 class="text-3xl lg:text-5xl leading-snug font-display mb-4 text-gray-50">{section1.title}</h2>
-        <p class="lg:text-lg text-gray-50">{section1.text}</p>
+        <p class="lg:text-lg text-gray-50 mb-4">{section1.text}</p>
+        {section1.cta?.[0] && (
+          <Button variant='neutral' {...resolveLink(section1.cta[0])}>
+            {section1.cta[0].title}
+          </Button>
+        )}
       </div>
     )}
     {section2 && (
       <div class="flex flex-col justify-start px-6 py-4 lg:px-12 lg:py-8">
         <h2 class="text-3xl lg:text-5xl leading-snug font-display mb-4 text-primary-500">{section2.title}</h2>
-        <p class="lg:text-lg">{section2.text}</p>
+        <p class="lg:text-lg mb-4">{section2.text}</p>
+        {section2.cta?.[0] && (
+          <Button className='w-fit' variant='primary' {...resolveLink(section2.cta[0])}>
+            {section2.cta[0].title}
+          </Button>
+        )}
       </div>
     )}
   </div>
