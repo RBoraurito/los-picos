@@ -1,0 +1,33 @@
+---
+import { sanityClient } from "sanity:client";
+import Layout from "../../layouts/Layout.astro";
+import { getAllArticlesQuery, getArticleQuery } from "~/queries/article";
+import ArticlePortableText from "~/components/article-portable-text.astro";
+
+export const prerender = true;
+
+export async function getStaticPaths() {
+  const articles =
+    await sanityClient.fetch<{ slug: string }[]>(getAllArticlesQuery);
+
+  return articles.map(({ slug }) => {
+    return {
+      params: { slug },
+    };
+  });
+}
+
+const { slug } = Astro.params;
+
+const article = await sanityClient.fetch(getArticleQuery, {
+  slug,
+});
+
+if (!article) return Astro.redirect("/404");
+---
+
+<Layout>
+  <div class="sections-container">
+    <ArticlePortableText content={article.content} />
+  </div>
+</Layout>

@@ -1,0 +1,32 @@
+---
+import { PortableText } from "astro-portabletext";
+import type { Article } from "~/types/sanity";
+import Hero from "./sections/hero.astro";
+import { containerStyles } from "~/styles/container";
+
+type Props = {
+  content: Article["content"];
+};
+
+const { content } = Astro.props;
+
+const components = {
+  type: {
+    hero: Hero,
+  },
+};
+---
+
+{/** @ts-ignore */}
+<PortableText value={content} {components}>
+  <fragment slot="block"
+    >{
+      // @ts-ignore
+      ({ Component /* custom component - Block */, props, children }) => (
+        <Component {...props} class={containerStyles}>
+          {children}
+        </Component>
+      )
+    }</fragment
+  >
+</PortableText>

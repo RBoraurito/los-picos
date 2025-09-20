@@ -21,6 +21,7 @@
     "@tailwindcss/vite": "^4.0.17",
     "astro": "^5.5.5",
     "astro-icon": "^1.1.5",
+    "astro-portabletext": "^0.11.1",
     "clsx": "^2.1.1",
     "groq": "^3.95.0",
     "react": "^19.1.0",

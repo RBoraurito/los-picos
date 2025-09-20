@@ -7,10 +7,21 @@ import { SSFeaturedContent } from "./featured-content";
 import { SSTitle } from "./title";
 import { SSTextBlocksWImages } from "./text-blocks-w-images";
 
+export const SECTIONS = [
+  SSHero,
+  SSContentWImage,
+  SSCardsGrid,
+  SSDoubleContent,
+  SSFeaturedContent,
+  SSTitle,
+  SSTextBlocksWImages,
+];
+
 export const SBSections = defineField({
   name: "sections",
   title: "Secciones",
   type: "array",
-  of: [SSHero, SSContentWImage, SSCardsGrid, SSDoubleContent, SSFeaturedContent, SSTitle, SSTextBlocksWImages],
-  validation: (Rule) => Rule.required().min(1).error("Debe haber al menos una sección"),
+  of: SECTIONS,
+  validation: (Rule) =>
+    Rule.required().min(1).error("Debe haber al menos una sección"),
 });

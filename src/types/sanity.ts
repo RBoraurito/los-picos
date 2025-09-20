@@ -74,6 +74,218 @@ export type Slug = {
   source?: string;
 };
 
+export type Article = {
+  _id: string;
+  _type: "article";
+  _createdAt: string;
+  _updatedAt: string;
+  _rev: string;
+  title?: string;
+  slug?: string;
+  description?: string;
+  image?: {
+    asset?: {
+      _ref: string;
+      _type: "reference";
+      _weak?: boolean;
+      [internalGroqTypeReferenceTo]?: "sanity.imageAsset";
+    };
+    media?: unknown;
+    hotspot?: SanityImageHotspot;
+    crop?: SanityImageCrop;
+    _type: "image";
+  };
+  publishedAt?: string;
+  tags?: Array<string>;
+  content?: Array<{
+    children?: Array<{
+      marks?: Array<string>;
+      text?: string;
+      _type: "span";
+      _key: string;
+    }>;
+    style?: "normal" | "h1" | "h2" | "h3" | "h4" | "h5" | "h6" | "blockquote";
+    listItem?: "bullet" | "number";
+    markDefs?: Array<{
+      href?: string;
+      _type: "link";
+      _key: string;
+    }>;
+    level?: number;
+    _type: "block";
+    _key: string;
+  } | {
+    asset?: {
+      _ref: string;
+      _type: "reference";
+      _weak?: boolean;
+      [internalGroqTypeReferenceTo]?: "sanity.imageAsset";
+    };
+    media?: unknown;
+    hotspot?: SanityImageHotspot;
+    crop?: SanityImageCrop;
+    _type: "image";
+    _key: string;
+  } | {
+    internalName?: string;
+    titleTag?: "h1" | "h2" | "h3" | "h4" | "h5" | "h6" | "p";
+    title?: string;
+    image?: {
+      asset?: {
+        _ref: string;
+        _type: "reference";
+        _weak?: boolean;
+        [internalGroqTypeReferenceTo]?: "sanity.imageAsset";
+      };
+      media?: unknown;
+      hotspot?: SanityImageHotspot;
+      crop?: SanityImageCrop;
+      _type: "image";
+    };
+    _type: "hero";
+    _key: string;
+  } | {
+    internalName?: string;
+    titleTag?: "h1" | "h2" | "h3" | "h4" | "h5" | "h6" | "p";
+    title?: string;
+    text?: string;
+    image?: {
+      asset?: {
+        _ref: string;
+        _type: "reference";
+        _weak?: boolean;
+        [internalGroqTypeReferenceTo]?: "sanity.imageAsset";
+      };
+      media?: unknown;
+      hotspot?: SanityImageHotspot;
+      crop?: SanityImageCrop;
+      _type: "image";
+    };
+    variant?: "merge-with-top" | "default";
+    _type: "content-w-image";
+    _key: string;
+  } | {
+    internalName?: string;
+    titleTag?: "h1" | "h2" | "h3" | "h4" | "h5" | "h6" | "p";
+    title?: string;
+    cards?: Array<{
+      title?: string;
+      content?: string;
+      image?: {
+        asset?: {
+          _ref: string;
+          _type: "reference";
+          _weak?: boolean;
+          [internalGroqTypeReferenceTo]?: "sanity.imageAsset";
+        };
+        media?: unknown;
+        hotspot?: SanityImageHotspot;
+        crop?: SanityImageCrop;
+        _type: "image";
+      };
+      cta?: Link;
+      _type: "card";
+      _key: string;
+    }>;
+    bgImage?: {
+      asset?: {
+        _ref: string;
+        _type: "reference";
+        _weak?: boolean;
+        [internalGroqTypeReferenceTo]?: "sanity.imageAsset";
+      };
+      media?: unknown;
+      hotspot?: SanityImageHotspot;
+      crop?: SanityImageCrop;
+      _type: "image";
+    };
+    variant?: "default";
+    _type: "cards-grid";
+    _key: string;
+  } | {
+    internalName?: string;
+    titleTag?: "h1" | "h2" | "h3" | "h4" | "h5" | "h6" | "p";
+    sections?: Array<{
+      title?: string;
+      text?: string;
+      cta?: Array<{
+        _key: string;
+      } & Link>;
+      _type: "section";
+      _key: string;
+    }>;
+    _type: "double-content";
+    _key: string;
+  } | {
+    internalName?: string;
+    titleTag?: "h1" | "h2" | "h3" | "h4" | "h5" | "h6" | "p";
+    title?: string;
+    text?: string;
+    bgImage?: {
+      asset?: {
+        _ref: string;
+        _type: "reference";
+        _weak?: boolean;
+        [internalGroqTypeReferenceTo]?: "sanity.imageAsset";
+      };
+      media?: unknown;
+      hotspot?: SanityImageHotspot;
+      crop?: SanityImageCrop;
+      _type: "image";
+    };
+    _type: "featured-content";
+    _key: string;
+  } | {
+    internalName?: string;
+    titleTag?: "h1" | "h2" | "h3" | "h4" | "h5" | "h6" | "p";
+    title?: string;
+    variant?: "default";
+    _type: "title";
+    _key: string;
+  } | {
+    internalName?: string;
+    titleTag?: "h1" | "h2" | "h3" | "h4" | "h5" | "h6" | "p";
+    images?: Array<{
+      asset?: {
+        _ref: string;
+        _type: "reference";
+        _weak?: boolean;
+        [internalGroqTypeReferenceTo]?: "sanity.imageAsset";
+      };
+      media?: unknown;
+      hotspot?: SanityImageHotspot;
+      crop?: SanityImageCrop;
+      _type: "image";
+      _key: string;
+    }>;
+    title?: string;
+    blocks?: Array<{
+      content?: Array<{
+        children?: Array<{
+          marks?: Array<string>;
+          text?: string;
+          _type: "span";
+          _key: string;
+        }>;
+        style?: "normal" | "h1" | "h2" | "h3" | "h4" | "h5" | "h6" | "blockquote";
+        listItem?: "bullet" | "number";
+        markDefs?: Array<{
+          href?: string;
+          _type: "link";
+          _key: string;
+        }>;
+        level?: number;
+        _type: "block";
+        _key: string;
+      }>;
+      _type: "textBlock";
+      _key: string;
+    }>;
+    _type: "text-blocks-w-images";
+    _key: string;
+  }>;
+};
+
 export type Page = {
   _id: string;
   _type: "page";
@@ -343,8 +555,225 @@ export type Link = {
   icon?: "" | "link" | "download" | "instagram" | "facebook" | "youtube" | "whatsapp";
 };
 
-export type AllSanitySchemaTypes = SanityImagePaletteSwatch | SanityImagePalette | SanityImageDimensions | SanityFileAsset | Geopoint | Slug | Page | GlobalConfig | SanityImageCrop | SanityImageHotspot | SanityImageAsset | SanityAssetSourceData | SanityImageMetadata | Link;
+export type AllSanitySchemaTypes = SanityImagePaletteSwatch | SanityImagePalette | SanityImageDimensions | SanityFileAsset | Geopoint | Slug | Article | Page | GlobalConfig | SanityImageCrop | SanityImageHotspot | SanityImageAsset | SanityAssetSourceData | SanityImageMetadata | Link;
 export declare const internalGroqTypeReferenceTo: unique symbol;
+// Source: ./src/queries/article.ts
+// Variable: getArticleQuery
+// Query: *[_type == "article" && slug == $slug][0]{  _id,  title,  description,  image,  tags[],  publishedAt,  slug,  content[]}
+export type GetArticleQueryResult = {
+  _id: string;
+  title: string | null;
+  description: string | null;
+  image: {
+    asset?: {
+      _ref: string;
+      _type: "reference";
+      _weak?: boolean;
+      [internalGroqTypeReferenceTo]?: "sanity.imageAsset";
+    };
+    media?: unknown;
+    hotspot?: SanityImageHotspot;
+    crop?: SanityImageCrop;
+    _type: "image";
+  } | null;
+  tags: Array<string> | null;
+  publishedAt: string | null;
+  slug: string | null;
+  content: Array<{
+    children?: Array<{
+      marks?: Array<string>;
+      text?: string;
+      _type: "span";
+      _key: string;
+    }>;
+    style?: "blockquote" | "h1" | "h2" | "h3" | "h4" | "h5" | "h6" | "normal";
+    listItem?: "bullet" | "number";
+    markDefs?: Array<{
+      href?: string;
+      _type: "link";
+      _key: string;
+    }>;
+    level?: number;
+    _type: "block";
+    _key: string;
+  } | {
+    internalName?: string;
+    titleTag?: "h1" | "h2" | "h3" | "h4" | "h5" | "h6" | "p";
+    title?: string;
+    cards?: Array<{
+      title?: string;
+      content?: string;
+      image?: {
+        asset?: {
+          _ref: string;
+          _type: "reference";
+          _weak?: boolean;
+          [internalGroqTypeReferenceTo]?: "sanity.imageAsset";
+        };
+        media?: unknown;
+        hotspot?: SanityImageHotspot;
+        crop?: SanityImageCrop;
+        _type: "image";
+      };
+      cta?: Link;
+      _type: "card";
+      _key: string;
+    }>;
+    bgImage?: {
+      asset?: {
+        _ref: string;
+        _type: "reference";
+        _weak?: boolean;
+        [internalGroqTypeReferenceTo]?: "sanity.imageAsset";
+      };
+      media?: unknown;
+      hotspot?: SanityImageHotspot;
+      crop?: SanityImageCrop;
+      _type: "image";
+    };
+    variant?: "default";
+    _type: "cards-grid";
+    _key: string;
+  } | {
+    internalName?: string;
+    titleTag?: "h1" | "h2" | "h3" | "h4" | "h5" | "h6" | "p";
+    title?: string;
+    text?: string;
+    image?: {
+      asset?: {
+        _ref: string;
+        _type: "reference";
+        _weak?: boolean;
+        [internalGroqTypeReferenceTo]?: "sanity.imageAsset";
+      };
+      media?: unknown;
+      hotspot?: SanityImageHotspot;
+      crop?: SanityImageCrop;
+      _type: "image";
+    };
+    variant?: "default" | "merge-with-top";
+    _type: "content-w-image";
+    _key: string;
+  } | {
+    internalName?: string;
+    titleTag?: "h1" | "h2" | "h3" | "h4" | "h5" | "h6" | "p";
+    sections?: Array<{
+      title?: string;
+      text?: string;
+      cta?: Array<{
+        _key: string;
+      } & Link>;
+      _type: "section";
+      _key: string;
+    }>;
+    _type: "double-content";
+    _key: string;
+  } | {
+    internalName?: string;
+    titleTag?: "h1" | "h2" | "h3" | "h4" | "h5" | "h6" | "p";
+    title?: string;
+    text?: string;
+    bgImage?: {
+      asset?: {
+        _ref: string;
+        _type: "reference";
+        _weak?: boolean;
+        [internalGroqTypeReferenceTo]?: "sanity.imageAsset";
+      };
+      media?: unknown;
+      hotspot?: SanityImageHotspot;
+      crop?: SanityImageCrop;
+      _type: "image";
+    };
+    _type: "featured-content";
+    _key: string;
+  } | {
+    internalName?: string;
+    titleTag?: "h1" | "h2" | "h3" | "h4" | "h5" | "h6" | "p";
+    title?: string;
+    image?: {
+      asset?: {
+        _ref: string;
+        _type: "reference";
+        _weak?: boolean;
+        [internalGroqTypeReferenceTo]?: "sanity.imageAsset";
+      };
+      media?: unknown;
+      hotspot?: SanityImageHotspot;
+      crop?: SanityImageCrop;
+      _type: "image";
+    };
+    _type: "hero";
+    _key: string;
+  } | {
+    asset?: {
+      _ref: string;
+      _type: "reference";
+      _weak?: boolean;
+      [internalGroqTypeReferenceTo]?: "sanity.imageAsset";
+    };
+    media?: unknown;
+    hotspot?: SanityImageHotspot;
+    crop?: SanityImageCrop;
+    _type: "image";
+    _key: string;
+  } | {
+    internalName?: string;
+    titleTag?: "h1" | "h2" | "h3" | "h4" | "h5" | "h6" | "p";
+    images?: Array<{
+      asset?: {
+        _ref: string;
+        _type: "reference";
+        _weak?: boolean;
+        [internalGroqTypeReferenceTo]?: "sanity.imageAsset";
+      };
+      media?: unknown;
+      hotspot?: SanityImageHotspot;
+      crop?: SanityImageCrop;
+      _type: "image";
+      _key: string;
+    }>;
+    title?: string;
+    blocks?: Array<{
+      content?: Array<{
+        children?: Array<{
+          marks?: Array<string>;
+          text?: string;
+          _type: "span";
+          _key: string;
+        }>;
+        style?: "blockquote" | "h1" | "h2" | "h3" | "h4" | "h5" | "h6" | "normal";
+        listItem?: "bullet" | "number";
+        markDefs?: Array<{
+          href?: string;
+          _type: "link";
+          _key: string;
+        }>;
+        level?: number;
+        _type: "block";
+        _key: string;
+      }>;
+      _type: "textBlock";
+      _key: string;
+    }>;
+    _type: "text-blocks-w-images";
+    _key: string;
+  } | {
+    internalName?: string;
+    titleTag?: "h1" | "h2" | "h3" | "h4" | "h5" | "h6" | "p";
+    title?: string;
+    variant?: "default";
+    _type: "title";
+    _key: string;
+  }> | null;
+} | null;
+// Variable: getAllArticlesQuery
+// Query: *[_type == "article"]{  _id,  slug,}
+export type GetAllArticlesQueryResult = Array<{
+  _id: string;
+  slug: string | null;
+}>;
+
 // Source: ./src/queries/global-config.ts
 // Variable: globalConfigQuery
 // Query: *[_type == 'globalConfig' && active == true][0]
@@ -583,6 +1012,8 @@ export type GetPageQueryResult = {
 import "@sanity/client";
 declare module "@sanity/client" {
   interface SanityQueries {
+    "*[_type == \"article\" && slug == $slug][0]{\n  _id,\n  title,\n  description,\n  image,\n  tags[],\n  publishedAt,\n  slug,\n  content[]\n}": GetArticleQueryResult;
+    "*[_type == \"article\"]{\n  _id,\n  slug,\n}": GetAllArticlesQueryResult;
     "*[_type == 'globalConfig' && active == true][0]": GlobalConfigQueryResult;
     "*[_type == \"page\"]{\n  _id,\n  slug,\n}": GetAllPagesQueryResult;
     "*[_type == \"page\" && slug == $slug][0]{\n  _id,\n  title,\n  slug,\n  sections[]{\n    _id,\n    title,\n    slug,\n    ...,\n    \"id\": _key\n  }\n}": GetPageQueryResult;
